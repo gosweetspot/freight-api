@@ -8,7 +8,7 @@ Gets a list of orders published but not processed.
 ***
 
 ## Requires authentication
-* A valid access Key must be provided in **access-token** header.
+* A valid access Key must be provided in **access_key** request header.
 
 ***
 
@@ -45,6 +45,12 @@ None
 
     http://api.gosweetspot.com/v2/pendingorders
 
+*Headers*
+
+    access_key: [access_key_for_site_account]
+    Content-Type: application/json; charset=utf-8
+
+        
 **Return** __shortened for example purpose__
 ``` json
 [
