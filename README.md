@@ -29,7 +29,7 @@ Currently, return format for all endpoints is [JSON](http://json.org/ "JSON").
 
 #### Publish Orders
 
-- **[<code>POST</code> comments/:id/comments](https://github.com/500px/api-documentation/blob/master/endpoints/comments/POST_comments_id_comments.md)**
+- **[<code>GET</code> v2/pendingorders](https://github.com/gossweetspot/freight-api/pendingorders/GET_pendingorders.md)**
 
 ## Rates Query
 
