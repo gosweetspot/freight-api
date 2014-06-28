@@ -55,7 +55,7 @@ None
     "consignee": "CHASE SYSTEMS",
     "Status": "DELIVERED",
     "TicketNumber": "SSPOT010702",
-    "TrackingUrl": "http://sweetspotgroup.co.nz/track/4180/SSPOT010702",
+    "TrackingUrl": "http://gosweetspot.com/track/4180-SSPOT010702",
     "Picked": "2012-11-01T17:59:00",
     "Delivered": "2012-11-02T13:44:00"
 }
