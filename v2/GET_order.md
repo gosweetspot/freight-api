@@ -20,18 +20,13 @@ Gets the current status of an order
 ## Return format
 A JSON object with order status:
 
-- **packingslipno** — unique order number or packing slip number from your system
-- **consignee** — receipient name
-- **status** — current status of order, options PENDING/PICKED/DELIVERED
-- **ticketnumber** — unique consignment number
-- **trackingurl** — track and trace website url
-- **picked** — localised to pickup timezone, pickup time stamp. *null* if not picked yet
-- **delivered** — localised to destintation timezone, delivery time stamp. *null* if not delivered yet
-
-***
-
-## Errors
-None
+- **packingslipno** ï¿½ unique order number or packing slip number from your system
+- **consignee** ï¿½ receipient name
+- **status** ï¿½ current status of order, options PENDING/PICKED/DELIVERED
+- **ticketnumber** ï¿½ unique consignment number
+- **trackingurl** ï¿½ track and trace website url
+- **picked** ï¿½ localised to pickup timezone, pickup time stamp. *null* if not picked yet
+- **delivered** ï¿½ localised to destintation timezone, delivery time stamp. *null* if not delivered yet
 
 ***
 
