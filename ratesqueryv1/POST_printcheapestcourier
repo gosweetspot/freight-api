@@ -1,4 +1,4 @@
-# Available Rates
+# Print Cheapest Courier 
 
     POST ratesquery/printcheapestcourier
 
@@ -54,44 +54,37 @@ Upon creating the shipment, the print command can also be automatically initiate
 
 
 ## Return format
-A JSON object array of available rates. These are group into *Available*, *Hidden*, *Rejected*.
-The *Hidden* rates, are available rates, but have been filtered out due to user preference, based on cost centre, or destination courier preference.
+A JSON object with the created shipment details.
 
-**Available/Hidden**
-- **quoteId** - unqiue rates calculation identifier
-- **carriername** - display name of courier provider
-- **deliverytype** - courier delivery/service type
-- **cost** - freight cost
-- **servicestandard** - courier service wording. 
-- **comments** - any extra comments supplied with this rate
-- **route** - courier provider specific freight routing
-- **isruraldelivery** - if delivery has been identified as a rural aread delivery
-- **issaturdaydelivery** - if delivery has been flagged for saturday delivery
-- **isfreightforward** - if pickup is originating from an address other then the site address
-- **carrierservicetype** - carrier provider service type
-
-**Rejected**
+- **carrier** - internal system carrier identifier
 - **carriername** - courier provider name
-- **deliverytype** - courier delivery/service type
-- **reason** - reason why this rates line was ignored.
+- **isfreightforward** - is shipment a freight forward shipment.
+- **message** - action outcome message
+- **errors** - JSON string array of error messages
+- **siteid** -  account site id
+- **consignments** - JSON object arrary or consignments created. Generally only 1 is created, however were a split is required, more could be created
 
-**ValidationErrors**
-- **key** - field name
-- **value** - reason for validation failure
+**Consignment**
+- **connote** - courier provider connote number
+- **trackingurl** - direct url to track and trace this shipment
+- **cost** - total cost of shipment, excluding taxes
+- **carriertype** - internal carrier classification
+- **issaturdaydelivery** - true/false - whether saturday delivery service was applied
+- **isrural** - true/false - whether delivery identified as rural
+- **isovernight** - true/false - whether service is overnight where delivery is inter island
+- **hastrackpaks** - true/false - whether this shipment has any trackpaks on it
 
-    
-    
 ***
 
 ## Errors
-If there are any validation errors these are reported via the *ValidationErrors* JSON object.
+If there are any validation errors these are reported via the *errors* property.
 
 ***
 
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/availablerates
+    http://api.gosweetspot.com/ratesqueryv1/printcheapestcourier
 
 *Headers*
 
@@ -158,7 +151,7 @@ If there are any validation errors these are reported via the *ValidationErrors*
 	"Consignments": [
 		{
 			"Connote": "NP8102203",
-			"TrackingUrl": "http://gosweetspot.co.nz/track/108633.NP8102203",
+			"TrackingUrl": "http://gosweetspot.com/track/108633-NP8102203",
 			"Cost": 16.25,
 			"CarrierType": 21,
 			"IsSaturdayDelivery": false,
