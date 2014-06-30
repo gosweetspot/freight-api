@@ -20,23 +20,18 @@ Gets a list of orders published but not processed.
 ## Return format
 An array orders:
 
-- **packingslipno** — unique order number or packing slip number from your system
-- **consignee** — receipient name
-- **address1** — address line 1, eg, building identifier, like Level 1, Fisher House, etc.
-- **address2** — address line 2, street name
-- **suburb** — suburb name
-- **city** — city name or state name. Depending on destination country, if state information is available, this should be the abbreviated state code
-- **postcode** — post code, for NZ addresses, this can be left blank if unknown.
-- **country** — ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
-- **delvref** — Order number, or customer reference for this order. 
-- **delvinstructions** — Any specific instructions to be printed on the label.
-- **contactname** — name of person, optional.
-- **contactphone** — phone number of person, optional.
-
-***
-
-## Errors
-None
+- **packingslipno** ï¿½ unique order number or packing slip number from your system
+- **consignee** ï¿½ receipient name
+- **address1** ï¿½ address line 1, eg, building identifier, like Level 1, Fisher House, etc.
+- **address2** ï¿½ address line 2, street name
+- **suburb** ï¿½ suburb name
+- **city** ï¿½ city name or state name. Depending on destination country, if state information is available, this should be the abbreviated state code
+- **postcode** ï¿½ post code, for NZ addresses, this can be left blank if unknown.
+- **country** ï¿½ ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
+- **delvref** ï¿½ Order number, or customer reference for this order. 
+- **delvinstructions** ï¿½ Any specific instructions to be printed on the label.
+- **contactname** ï¿½ name of person, optional.
+- **contactphone** ï¿½ phone number of person, optional.
 
 ***
 
