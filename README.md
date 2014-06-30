@@ -31,8 +31,8 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 
 - **[<code>GET</code> v2/pendingorders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_pendingorders.md)**
 - **[<code>GET</code> v2/order](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_order.md)**
-- **[<code>POST</code> v2/neworder](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_neworder.md)**
-- **[<code>POST</code> v2/neworders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_neworders.md)**
+- **[<code>POST</code> v2/neworder](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworder.md)**
+- **[<code>POST</code> v2/neworders](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworders.md)**
 
 ### Rates Query
 
