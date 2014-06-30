@@ -36,7 +36,7 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 
 ### Rates Query
 
-- **[<code>POST</code> ratesquery/availablerates](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availaberates.md)**
+- **[<code>POST</code> ratesquery/availablerates](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availablerates.md)**
  
 ### Create and Print Shipments
 
