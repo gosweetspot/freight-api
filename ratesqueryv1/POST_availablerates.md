@@ -51,43 +51,44 @@ Query to get available courier services and rates for the destination.
 
 
 ## Return format
-A JSON object array of available rates. These are group into *Available*, *Hidden*, *Rejected*
+A JSON object array of available rates. These are group into *Available*, *Hidden*, *Rejected*.
+The *Hidden* rates, are available rates, but have been filtered out due to user preference, based on cost centre, or destination courier preference.
 
 **Available/Hidden**
 - **quoteId** - unqiue rates calculation identifier
-- **carriername** - unqiue rates calculation identifier
-- **deliverytype** - unqiue rates calculation identifier
-- **cost** - unqiue rates calculation identifier
-- **servicestandard** - unqiue rates calculation identifier
-- **comments** - unqiue rates calculation identifier
-- **route** - unqiue rates calculation identifier
-- **isruraldelivery** - unqiue rates calculation identifier
-- **issaturdaydelivery** - unqiue rates calculation identifier
-- **isfreightforward** - unqiue rates calculation identifier
-- **carrierservicetype** - unqiue rates calculation identifier
+- **carriername** - display name of courier provider
+- **deliverytype** - courier delivery/service type
+- **cost** - freight cost
+- **servicestandard** - courier service wording. 
+- **comments** - any extra comments supplied with this rate
+- **route** - courier provider specific freight routing
+- **isruraldelivery** - if delivery has been identified as a rural aread delivery
+- **issaturdaydelivery** - if delivery has been flagged for saturday delivery
+- **isfreightforward** - if pickup is originating from an address other then the site address
+- **carrierservicetype** - carrier provider service type
 
 **Rejected**
-- **carriername** - unqiue rates calculation identifier
-- **deliverytype** - unqiue rates calculation identifier
-- **reason** - unqiue rates calculation identifier
+- **carriername** - courier provider name
+- **deliverytype** - courier delivery/service type
+- **reason** - reason why this rates line was ignored.
 
 **ValidationErrors**
-- **key** - unqiue rates calculation identifier
-- **value** - unqiue rates calculation identifier
+- **key** - field name
+- **value** - reason for validation failure
 
     
     
 ***
 
 ## Errors
-None
+If there are any validation errors these are reported via the *ValidationErrors* JSON object.
 
 ***
 
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/v2/neworder
+    http://api.gosweetspot.com/ratesqueryv1/availablerates
 
 *Headers*
 
@@ -99,19 +100,82 @@ None
 *Body*
 ``` json
 {
-    "packingslipno": "TEST0002",
-    "consignee": "CHASE SYSTEMS",
-    "Status": "DELIVERED",
-    "TicketNumber": "SSPOT010702",
-    "TrackingUrl": "http://sweetspotgroup.co.nz/track/4180/SSPOT010702",
-    "Picked": "2012-11-01T17:59:00",
-    "Delivered": "2012-11-02T13:44:00"
+	"Origin": null,
+	"Destination": {
+		"Id": 0,
+		"Name": "DestinationName",
+		"Address": {
+			"BuildingName": "",
+			"StreetAddress": "DestinationStreetAddress",
+			"Suburb": "Oamaru",
+			"City": "Oamaru",
+			"PostCode": "7980",
+			"CountryCode": "NZ"
+		},
+		"Email": "destinationemail@email.com",
+		"ContactPerson": "DestinationContact",
+		"PhoneNumber": "123456789",
+		"IsRural": false,
+		"DeliveryInstructions": "Desinationdeliveryinstructions",
+		"SendTrackingEmail": false,
+		"CostCentreId": 0,
+		"ExplicitNotRural": false
+	},
+	"Packages": [
+		{
+			"Id": 0,
+			"Name": "Custom",
+			"Length": 10,
+			"Width": 10,
+			"Height": 10,
+			"Kg": 10,
+			"Type": “Box”,
+			“PackageCode” : “A5”
+		}
+	],
+	"IsSaturdayDelivery": false,
+	"IsSignatureRequired": true,
+	"IsUrgentCouriers": false,
+	"DutiesAndTaxesByReceiver": false,
+"RuralOverride": false,
+    "DeliveryReference": "ORDER123"
 }
 ```
 
 
 **Response** 
 ``` json
-true
+{
+	"Available": [
+		{
+			"QuoteId": "65a5f660-13f7-4a1b-a338-06444e632a37",
+			"CarrierName": "Post Haste",
+			"DeliveryType": "2 Day Inter Island",
+			"Cost": 27.86,
+			"ServiceStandard": "By 11am second business day",
+			"Comments": "Weight ",
+			"Route": "AKL- LOCAL->AKL- SI",
+			"IsRuralDelivery": false,
+			"IsSaturdayDelivery": false,
+			"IsFreightForward": false,
+			"CarrierServiceType": "DomesticCourier"
+		},
+		{
+			"QuoteId": "46a958d1-4441-4d4a-9507-5c60f7c444c4",
+			"CarrierName": "Post Haste",
+			"DeliveryType": "Overnight",
+			"Cost": 83.27,
+			"ServiceStandard": "By 11am next business day",
+			"Comments": "Weight ",
+			"Route": "AKL- LOCAL->AKL- SI",
+			"IsRuralDelivery": false,
+			"IsSaturdayDelivery": false,
+			"IsFreightForward": false,
+			"CarrierServiceType": "DomesticCourier"
+		}
+	],
+	"Rejected": [],
+	"ValidationErrors": {}
+}
 ```
 
