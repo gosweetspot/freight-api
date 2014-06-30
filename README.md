@@ -29,19 +29,19 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 
 #### Publish Orders
 
-- **[<code>GET</code> v2/pendingorders](https://github.com/gossweetspot/freight-api/v2/GET_pendingorders.md)**
-- **[<code>GET</code> v2/order](https://github.com/gossweetspot/freight-api/v2/GET_order.md)**
-- **[<code>POST</code> v2/neworder](https://github.com/gossweetspot/freight-api/v2/GET_neworder.md)**
-- **[<code>POST</code> v2/neworders](https://github.com/gossweetspot/freight-api/v2/GET_neworders.md)**
+- **[<code>GET</code> v2/pendingorders](https://github.com/gossweetspot/freight-api/blob/master/v2/GET_pendingorders.md)**
+- **[<code>GET</code> v2/order](https://github.com/gossweetspot/freight-api/blob/master/v2/GET_order.md)**
+- **[<code>POST</code> v2/neworder](https://github.com/gossweetspot/freight-api/blob/master/v2/GET_neworder.md)**
+- **[<code>POST</code> v2/neworders](https://github.com/gossweetspot/freight-api/blob/master/v2/GET_neworders.md)**
 
 ### Rates Query
 
-- **[<code>POST</code> ratesquery/availablerates](https://github.com/freight-api/ratesqueryv1/POST_availaberates.md)**
+- **[<code>POST</code> ratesquery/availablerates](https://github.com/freight-api/blob/master/ratesqueryv1/POST_availaberates.md)**
  
 ### Create and Print Shipments
 
-- **[<code>POST</code> ratesquery/printcheapestcourier](https://github.com/freight-api/ratesqueryv1/POST_printcheapestcourier.md)**
-- **[<code>POST</code> ratesquery/createandprint](https://github.com/freight-api/ratesqueryv1/POST_createandprint.md)**
+- **[<code>POST</code> ratesquery/printcheapestcourier](https://github.com/freight-api/blob/master/ratesqueryv1/POST_printcheapestcourier.md)**
+- **[<code>POST</code> ratesquery/createandprint](https://github.com/freight-api/blob/master/ratesqueryv1/POST_createandprint.md)**
 
 ## FAQ
 ### What do I need to know before I start using the API?
