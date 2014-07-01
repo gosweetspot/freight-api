@@ -14,13 +14,13 @@ Query to get available courier services and rates for the destination.
 
 ## Parameters
 - **origin** - Specify the unique order number from your source system, that was used as the packing slip no when the order was published
-- **destination** נrecepient name
-- **packages** נaddress line 1, eg, building identifier, like Level 1, Fisher House, etc.
-- **issaturdaydelivery** נaddress line 2, street name
-- **issignaturerequired** נsuburb name
-- **dutiesandtaxesbyreceiver** נpost code, for NZ addresses, this can be left blank if unknown.
-- **ruraloverride** נISO Alpha 2 country code, eg NZ, AU, US, UK, CN
-- **deliveryreference** נOrder number, or customer reference for this order. 
+- **destination** - JSON object of destinationa address
+- **packages** - JSON object array of package objects
+- **issaturdaydelivery** - true/false
+- **issignaturerequired** - true/false
+- **dutiesandtaxesbyreceiver** - true/false
+- **ruraloverride** - true/false
+- **deliveryreference** - string:60, order reference
 
 *origin/destination Object*
 - **name** - string:60, Company name or persons name
