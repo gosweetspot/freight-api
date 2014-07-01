@@ -44,12 +44,6 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 - **[<code>POST</code> ratesquery/createandprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_createandprint.md)**
 
 ## FAQ
-### What do I need to know before I start using the API?
-Got rust on your skills? No worries. Here are the docs you might need to get started:
-
-- HTTPS protocol
-- [REST software pattern][]
-- Data serialization with [JSON][] (or see a [quick tutorial][])
 
 ### How do I connect to the API?
 The API is only available to authenticated clients. Clients should authenticate users using [access_key]. Once authenticated, you need to request a resource from one of the endpoints using HTTP. Generally, reading any data is done through a request with GET method.
