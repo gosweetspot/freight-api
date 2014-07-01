@@ -60,51 +60,51 @@ None
 ``` json
 [
   {
-    "packingslipno":"test0001",
-    "consignee":"Test 1",
-    "address1":"1 Queens Street",
-    "address2":"",
-    "suburb":"Auckland Central",
-    "city":"Auckland",
-    "postcode":"",
-    "country": "NZ",
-    "delvref":null,
-    "delvinstructions":null,
-    "contactname":null,
-    "contactphone":null,
-    "email":null
+    "packingslipno": "test1-14-07-01",
+    "consignee": "Test 1",
+    "address1": "1 Queens Street",
+    "address2": "",
+    "suburb": "Auckland Central",
+    "city": "Auckland",
+    "postcode": "",
+    "country": null,
+    "delvref": null,
+    "delvinstructions": null,
+    "contactname": null,
+    "contactphone": null,
+    "email": null
   },
   {
-    "packingslipno":"test0002",
-    "consignee":"Test 2",
-    "address1":"1 Queens Street",
-    "address2":"",
-    "suburb":"Auckland Central",
-    "city":"Auckland",
-    "postcode":"",
-    "country": "NZ",
-    "delvref":null,
-    "delvinstructions":null,
-    "contactname":null,
-    "contactphone":null,
-    "email":null
+    "packingslipno": "test2-14-07-01",
+    "consignee": "Test 2",
+    "address1": "1 Queens Street",
+    "address2": "",
+    "suburb": "Auckland Central",
+    "city": "Auckland",
+    "postcode": "",
+    "country": null,
+    "delvref": null,
+    "delvinstructions": null,
+    "contactname": null,
+    "contactphone": null,
+    "email": null
   }
 ]
+
 ```
 
 
 **Response** 
 A JSON object array of order and save status.
 
-``` json
 [
   {
-    "packingslipno":"test0001",
-    "result":true
+    "packingslipno": "test1-14-07-01",
+    "result": true
   },
   {
-    "packingslipno":"test0002",
-    "result":true
+    "packingslipno": "test2-14-07-01",
+    "result": true
   }
 ]
 
