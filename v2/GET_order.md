@@ -1,4 +1,4 @@
-# Pending Orders
+# Get Order Status
 
     GET order/[packingslipno]
 
@@ -20,13 +20,13 @@ Gets the current status of an order
 ## Return format
 A JSON object with order status:
 
-- **packingslipno** � unique order number or packing slip number from your system
-- **consignee** � receipient name
-- **status** � current status of order, options PENDING/PICKED/DELIVERED
-- **ticketnumber** � unique consignment number
-- **trackingurl** � track and trace website url
-- **picked** � localised to pickup timezone, pickup time stamp. *null* if not picked yet
-- **delivered** � localised to destintation timezone, delivery time stamp. *null* if not delivered yet
+- **packingslipno** - unique order number or packing slip number from your system
+- **consignee** - receipient name
+- **status** - current status of order, options PENDING/PICKED/DELIVERED
+- **ticketnumber** - unique consignment number
+- **trackingurl** - track and trace website url
+- **picked** - localised to pickup timezone, pickup time stamp. *null* if not picked yet
+- **delivered** - localised to destintation timezone, delivery time stamp. *null* if not delivered yet
 
 ***
 
@@ -47,7 +47,7 @@ A JSON object with order status:
 ``` json
 {
   "packingslipno": "SSORDER5840",
-  "consignee": "PHOTOSHACK LIMITED",
+  "consignee": "PHOTO DREAMS LIMITED",
   "Status": "DELIVERED",
   "ticketnumber": "SSPOT012671",
   "trackingurl": "http://gosweetspot.com/track/4180-SSPOT012671",
