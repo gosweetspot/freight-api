@@ -14,18 +14,18 @@ Saves a new order or updates a pending order. If the packing slip number has alr
 
 ## Parameters
 - **packingslipno** - Specify the unique order number from your source system, that was used as the packing slip no when the order was published
-- **consignee** � recepient name
-- **address1** � address line 1, eg, building identifier, like Level 1, Fisher House, etc.
-- **address2** � address line 2, street name
-- **suburb** � suburb name
-- **city** � city name or state name. Depending on destination country, if state information is available, this should be the abbreviated state code
-- **postcode** � post code, for NZ addresses, this can be left blank if unknown.
-- **country** � ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
-- **delvref** � Order number, or customer reference for this order. 
-- **delvinstructions** � Any specific instructions to be printed on the label.
-- **contactname** � name of person, optional.
-- **contactphone** � phone number of person, optional.
-- **email** � email address for track & trace email, optional.
+- **consignee** - recepient name
+- **address1** - address line 1, eg, building identifier, like Level 1, Fisher House, etc.
+- **address2** - address line 2, street name
+- **suburb** - suburb name
+- **city** - city name or state name. Depending on destination country, if state information is available, this should be the abbreviated state code
+- **postcode** - post code, for NZ addresses, this can be left blank if unknown.
+- **country** - ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
+- **delvref** - Order number, or customer reference for this order. 
+- **delvinstructions** - Any specific instructions to be printed on the label.
+- **contactname** - name of person, optional.
+- **contactphone** - phone number of person, optional.
+- **email** - email address for track & trace email, optional.
 
 ***
 
