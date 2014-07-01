@@ -33,7 +33,7 @@ A JSON object with order status:
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/v2/order/test002
+    http://api.gosweetspot.com/v2/order/SSORDER5840
     
 
 *Headers*
@@ -45,14 +45,6 @@ A JSON object with order status:
 
 **Response** 
 ``` json
-{
-    "packingslipno": "TEST0002",
-    "consignee": "CHASE SYSTEMS",
-    "Status": "DELIVERED",
-    "TicketNumber": "SSPOT010702",
-    "TrackingUrl": "http://gosweetspot.com/track/4180-SSPOT010702",
-    "Picked": "2012-11-01T17:59:00",
-    "Delivered": "2012-11-02T13:44:00"
-}
+{"packingslipno":"SSORDER5840","consignee":"PHOTOSHACK LIMITED","Status":"DELIVERED","ticketnumber":"SSPOT012671","trackingurl":"http://sweetspotgroup.co.nz/track/4180/SSPOT012671","Picked":"2014-06-03T08:40:00","Delivered":"2014-06-03T14:46:45"}
 ```
 
