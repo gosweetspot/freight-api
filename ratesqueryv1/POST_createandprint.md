@@ -3,7 +3,7 @@
     POST ratesquery/printcheapestcourier
 
 ## Description
-This interface allows you to create a shipment with the cheapest courier option available.
+Once a freight option has been identified using the AvailableRates(https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availablerates.md) method, you can use this method to create the shipment.
 
 Upon creating the shipment, the print command can also be automatically initiated. This print command requires the Print Agent to be installed and available.
 
@@ -15,15 +15,21 @@ Upon creating the shipment, the print command can also be automatically initiate
 ***
 
 ## Parameters
-- **origin** - Specify the unique order number from your source system, that was used as the packing slip no when the order was published
-- **destination** - recepient name
-- **packages** - address line 1, eg, building identifier, like Level 1, Fisher House, etc.
-- **issaturdaydelivery** - address line 2, street name
-- **issignaturerequired** - suburb name
-- **dutiesandtaxesbyreceiver**  - post code, for NZ addresses, this can be left blank if unknown.
-- **ruraloverride** - ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
-- **deliveryreference** - Order number, or customer reference for this order. 
+
+You need to extend the AvailableRates post body to include other fields specified below.
+
+- **QuoteId** - unique quote identifier returned on the *availablerates* query. 
+- **origin** - blank when using site address, or provide one for freight forwards
+- **destination** - JSON obect of recepient address details
+- **packages** - JSON object array of package sizes
+- **issaturdaydelivery** - true/false - is saturday delivery required
+- **issignaturerequired** - true/false - is signature on delivery required
+- **dutiesandtaxesbyreceiver**  - true/false - where duties are due, is the receiver paying for these
+- **ruraloverride** - true/false - ignore all rural delivery validation and surcharges
+- **deliveryreference** - string:50, order reference
+- **commodities** - JSON object array of customs declared commoditiy information. Only required for international shipments.
 - **printtoprinter** - yes/no - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
+- **outputs** - JSON string array. Return output of label as a PNG or PDF. Acceptable values: "LABEL_PDF"/"LABEL_PNG"
 
 *origin/destination Object*
 - **name** - string:60, Company name or persons name
@@ -51,6 +57,14 @@ Upon creating the shipment, the print command can also be automatically initiate
 - **kg** - decimal, package weight in kilograms
 - **type** - string:10, package type, eg, Box, Carton, Satchel, Bag, Pallet, etc
 - **packagecode** - string:5, Trackpack codes, such as DLE, A5, A4 (please consult support before providing a value in this field) This feature is not available on all accounts.
+ 
+*commodity Object*
+- **units** - decimal, how many units
+- **unitvalue** - decimal, value per unit
+- **unitkg** - decimal, weight in kg per unit
+- **currency** - string:3, declared value currency designation, eg NZD, AUD, USD
+- **country** - string:2, ISO Alpha 2 country code for the Country of Manufacture of goods, eg, NZ, AU, US, GB, CN, CA, etc.
+
 
 
 ## Return format
@@ -73,18 +87,15 @@ A JSON object with the created shipment details.
 - **isrural** - true/false - whether delivery identified as rural
 - **isovernight** - true/false - whether service is overnight where delivery is inter island
 - **hastrackpaks** - true/false - whether this shipment has any trackpaks on it
+- **outputs** - JSON object byte array with requested output file as Base64 encoded string
 
 ***
 
-## Errors
-If there are any validation errors these are reported via the *errors* property.
-
-***
 
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/printcheapestcourier
+    http://api.gosweetspot.com/ratesqueryv1/createandprint
 
 *Headers*
 
@@ -95,71 +106,12 @@ If there are any validation errors these are reported via the *errors* property.
 
 *Body*
 ``` json
-{
-	"Origin": null,
-	"Destination": {
-		"Id": 0,
-		"Name": "DestinationName",
-		"Address": {
-			"BuildingName": "",
-			"StreetAddress": "DestinationStreetAddress",
-			"Suburb": "Oamaru",
-			"City": "Oamaru",
-			"PostCode": "7980",
-			"CountryCode": "NZ"
-		},
-		"Email": "destinationemail@email.com",
-		"ContactPerson": "DestinationContact",
-		"PhoneNumber": "123456789",
-		"IsRural": false,
-		"DeliveryInstructions": "Desinationdeliveryinstructions",
-		"SendTrackingEmail": false,
-		"CostCentreId": 0,
-		"ExplicitNotRural": false
-	},
-	"Packages": [
-		{
-			"Id": 0,
-			"Name": "Custom",
-			"Length": 10,
-			"Width": 10,
-			"Height": 10,
-			"Kg": 10,
-			"Type": “Box”,
-			“PackageCode” : “A5”
-		}
-	],
-	"IsSaturdayDelivery": false,
-	"IsSignatureRequired": true,
-	"IsUrgentCouriers": false,
-	"DutiesAndTaxesByReceiver": false,
-"RuralOverride": false,
-    "DeliveryReference": "ORDER123"
-}
+
 ```
 
 
 **Response** 
 ``` json
-{
-	"CarrierId": 201,
-	"CarrierName": "NZPost Easytrack",
-	"IsFreightForward": false,
-	"Message": "Connote create and print queued.",
-	"Errors": [],
-	"SiteId": 108633,
-	"Consignments": [
-		{
-			"Connote": "NP8102203",
-			"TrackingUrl": "http://gosweetspot.com/track/108633-NP8102203",
-			"Cost": 16.25,
-			"CarrierType": 21,
-			"IsSaturdayDelivery": false,
-			"IsRural": false,
-			"IsOvernight": false,
-			"HasTrackPaks": false
-		}
-	]
-}
+
 ```
 
