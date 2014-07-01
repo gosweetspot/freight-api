@@ -14,18 +14,18 @@ Saves a new order or updates a pending order. If the packing slip number has alr
 
 ## Parameters
 - **packingslipno** - Specify the unique order number from your source system, that was used as the packing slip no when the order was published
-- **consignee** — recepient name
-- **address1** — address line 1, eg, building identifier, like Level 1, Fisher House, etc.
-- **address2** — address line 2, street name
-- **suburb** — suburb name
-- **city** — city name or state name. Depending on destination country, if state information is available, this should be the abbreviated state code
-- **postcode** — post code, for NZ addresses, this can be left blank if unknown.
-- **country** — ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
-- **delvref** — Order number, or customer reference for this order. 
-- **delvinstructions** — Any specific instructions to be printed on the label.
-- **contactname** — name of person, optional.
-- **contactphone** — phone number of person, optional.
-- **email** — email address for track & trace email, optional.
+- **consignee** ï¿½ recepient name
+- **address1** ï¿½ address line 1, eg, building identifier, like Level 1, Fisher House, etc.
+- **address2** ï¿½ address line 2, street name
+- **suburb** ï¿½ suburb name
+- **city** ï¿½ city name or state name. Depending on destination country, if state information is available, this should be the abbreviated state code
+- **postcode** ï¿½ post code, for NZ addresses, this can be left blank if unknown.
+- **country** ï¿½ ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
+- **delvref** ï¿½ Order number, or customer reference for this order. 
+- **delvinstructions** ï¿½ Any specific instructions to be printed on the label.
+- **contactname** ï¿½ name of person, optional.
+- **contactphone** ï¿½ phone number of person, optional.
+- **email** ï¿½ email address for track & trace email, optional.
 
 ***
 
@@ -54,13 +54,19 @@ None
 *Body*
 ``` json
 {
-    "packingslipno": "TEST0002",
-    "consignee": "CHASE SYSTEMS",
-    "Status": "DELIVERED",
-    "TicketNumber": "SSPOT010702",
-    "TrackingUrl": "http://sweetspotgroup.co.nz/track/4180/SSPOT010702",
-    "Picked": "2012-11-01T17:59:00",
-    "Delivered": "2012-11-02T13:44:00"
+  "packingslipno": "test-14-07-01",
+  "consignee": "Test,",
+  "address1": "1 Queens Street",
+  "address2": "",
+  "suburb": "Auckland Centrol",
+  "city": "Auckland",
+  "postcode": "",
+  "country": null,
+  "delvref": null,
+  "delvinstructions": null,
+  "contactname": null,
+  "contactphone": null,
+  "email": null
 }
 ```
 
