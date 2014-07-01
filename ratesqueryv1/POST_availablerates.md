@@ -100,45 +100,37 @@ If there are any validation errors these are reported via the *ValidationErrors*
 *Body*
 ``` json
 {
-	"Origin": null,
-	"Destination": {
-		"Id": 0,
-		"Name": "DestinationName",
-		"Address": {
-			"BuildingName": "",
-			"StreetAddress": "DestinationStreetAddress",
-			"Suburb": "Oamaru",
-			"City": "Oamaru",
-			"PostCode": "7980",
-			"CountryCode": "NZ"
-		},
-		"Email": "destinationemail@email.com",
-		"ContactPerson": "DestinationContact",
-		"PhoneNumber": "123456789",
-		"IsRural": false,
-		"DeliveryInstructions": "Desinationdeliveryinstructions",
-		"SendTrackingEmail": false,
-		"CostCentreId": 0,
-		"ExplicitNotRural": false
-	},
-	"Packages": [
-		{
-			"Id": 0,
-			"Name": "Custom",
-			"Length": 10,
-			"Width": 10,
-			"Height": 10,
-			"Kg": 10,
-			"Type": “Box”,
-			“PackageCode” : “A5”
-		}
-	],
-	"IsSaturdayDelivery": false,
-	"IsSignatureRequired": true,
-	"IsUrgentCouriers": false,
-	"DutiesAndTaxesByReceiver": false,
-"RuralOverride": false,
-    "DeliveryReference": "ORDER123"
+  "DeliveryReference": "ORDER123",
+  "Destination": {
+    "Id": 0,
+    "Name": "DestinationName",
+    "Address": {
+      "BuildingName": "",
+      "StreetAddress": "DestinationStreetAddress",
+      "Suburb": "Avonside",
+      "City": "Christchurch",
+      "PostCode": "8061",
+      "CountryCode": "NZ"
+    },
+    "ContactPerson": "DestinationContact",
+    "PhoneNumber": "123456789",
+    "Email": "destinationemail@email.com",
+    "DeliveryInstructions": "Desinationdeliveryinstructions"
+  },
+  "IsSaturdayDelivery": false,
+  "IsSignatureRequired": true,
+  "Packages": [
+    {
+      "Height": 1,
+      "Length": 1,
+      "Id": 0,
+      "Width": 10,
+      "Kg": 0.1,
+      "Name": "GSS-DLE SATCHEL",
+      "PackageCode": "DLE",
+      "Type": "Box"
+    }
+  ]
 }
 ```
 
@@ -146,36 +138,60 @@ If there are any validation errors these are reported via the *ValidationErrors*
 **Response** 
 ``` json
 {
-	"Available": [
-		{
-			"QuoteId": "65a5f660-13f7-4a1b-a338-06444e632a37",
-			"CarrierName": "Post Haste",
-			"DeliveryType": "2 Day Inter Island",
-			"Cost": 27.86,
-			"ServiceStandard": "By 11am second business day",
-			"Comments": "Weight ",
-			"Route": "AKL- LOCAL->AKL- SI",
-			"IsRuralDelivery": false,
-			"IsSaturdayDelivery": false,
-			"IsFreightForward": false,
-			"CarrierServiceType": "DomesticCourier"
-		},
-		{
-			"QuoteId": "46a958d1-4441-4d4a-9507-5c60f7c444c4",
-			"CarrierName": "Post Haste",
-			"DeliveryType": "Overnight",
-			"Cost": 83.27,
-			"ServiceStandard": "By 11am next business day",
-			"Comments": "Weight ",
-			"Route": "AKL- LOCAL->AKL- SI",
-			"IsRuralDelivery": false,
-			"IsSaturdayDelivery": false,
-			"IsFreightForward": false,
-			"CarrierServiceType": "DomesticCourier"
-		}
-	],
-	"Rejected": [],
-	"ValidationErrors": {}
+  "Available": [
+    {
+      "QuoteId": "3104eb7e-6354-4de4-a250-fa96297282d2",
+      "CarrierId": 102,
+      "CarrierName": "Post Haste",
+      "DeliveryType": "Overnight",
+      "Cost": 8.58,
+      "ServiceStandard": "By 11am next business day",
+      "Comments": "Satchel ",
+      "Route": "AKL- LOCAL->AKL- SI",
+      "IsRuralDelivery": false,
+      "IsSaturdayDelivery": false,
+      "IsFreightForward": false,
+      "CarrierServiceType": "DomesticCourier"
+    },
+    {
+      "QuoteId": "22401e18-e097-4ac8-9e6f-271734e92a50",
+      "CarrierId": 147,
+      "CarrierName": "PBT Couriers",
+      "DeliveryType": "Overnight",
+      "Cost": 8.89,
+      "ServiceStandard": "By 12pm next business day",
+      "Comments": "Satchel ",
+      "Route": "AKL- LOCAL->AKL- SI",
+      "IsRuralDelivery": false,
+      "IsSaturdayDelivery": false,
+      "IsFreightForward": false,
+      "CarrierServiceType": "DomesticCourier"
+    },
+    {
+      "QuoteId": "489898a3-85e8-47fe-8184-916dd75b2b79",
+      "CarrierId": 205,
+      "CarrierName": "Mainstream Freight",
+      "DeliveryType": "Standard",
+      "Cost": 65.42,
+      "ServiceStandard": "Next day within island, 2 day inter island",
+      "Comments": "VM ",
+      "Route": "MS-AKL->CHRISTCHURCH",
+      "IsRuralDelivery": false,
+      "IsSaturdayDelivery": false,
+      "IsFreightForward": false,
+      "CarrierServiceType": "DomesticBulk"
+    }
+  ],
+  "Rejected": [
+    {
+      "Reason": "MS-AKL -> CHRISTCHURCH: Consignment undersize/weight",
+      "Carrier": "Mainstream AKL",
+      "DeliveryType": "Standard 1000kg+"
+    }
+  ],
+  "ValidationErrors": {
+  }
 }
+
 ```
 
