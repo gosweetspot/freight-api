@@ -50,7 +50,7 @@ A JSON object with order status:
   "consignee": "PHOTOSHACK LIMITED",
   "Status": "DELIVERED",
   "ticketnumber": "SSPOT012671",
-  "trackingurl": "http:\/\/sweetspotgroup.co.nz\/track\/4180\/SSPOT012671",
+  "trackingurl": "http://gosweetspot.com/track/4180-SSPOT012671",
   "Picked": "2014-06-03T08:40:00",
   "Delivered": "2014-06-03T14:46:45"
 }
