@@ -106,12 +106,98 @@ A JSON object with the created shipment details.
 
 *Body*
 ``` json
+{
+  "QuoteId": "f2878ff8-107f-4ca3-9d2e-3ca943b6d808",
+  "DeliveryReference": "ORDER123",
+  "Destination": {
+    "Id": 0,
+    "Name": "DestinationName",
+    "Address": {
+      "BuildingName": "",
+      "StreetAddress": "DestinationStreetAddress",
+      "Suburb": "Avonside",
+      "City": "Christchurch",
+      "PostCode": "8061",
+      "CountryCode": "NZ"
+    },
+    "ContactPerson": "DestinationContact",
+    "PhoneNumber": "123456789",
+    "Email": "destinationemail@email.com",
+    "DeliveryInstructions": "Desinationdeliveryinstructions"
+  },
+  "IsSaturdayDelivery": false,
+  "IsSignatureRequired": true,
+  "Packages": [
+    {
+      "Height": 1,
+      "Length": 1,
+      "Id": 0,
+      "Width": 10,
+      "Kg": 0.1,
+      "Name": "GSS-DLE SATCHEL",
+      "PackageCode": "DLE",
+      "Type": "Box"
+    }
+  ],
+  "PrintToPrinter": true,
+  "Commodities": [
+    {
+      "Description": "Apparel",
+      "UnitKg": 0.33,
+      "UnitValue": 1,
+      "Units": 1,
+      "Country": "NZ",
+      "Currency": "NZD"
+    }
+  ],
+  "Outputs": [
+    "LABEL_PDF"
+  ]
+}
+
+
 
 ```
 
 
 **Response** 
 ``` json
-
+{
+  "CarrierId": 102,
+  "CarrierName": "Post Haste",
+  "IsFreightForward": false,
+  "IsOvernight": true,
+  "IsSaturdayDelivery": false,
+  "IsRural": false,
+  "HasTrackPaks": true,
+  "Message": "Connote created and print queued.",
+  "Errors": [
+    
+  ],
+  "SiteId": 4180,
+  "Consignments": [
+    {
+      "Connote": "SSPOT012864",
+      "TrackingUrl": "http://gosweetspot.com/track/4180-SSPOT012864",
+      "Cost": 9.22,
+      "CarrierType": 13,
+      "IsSaturdayDelivery": false,
+      "IsRural": false,
+      "IsOvernight": true,
+      "HasTrackPaks": true,
+      "ConsignmentId": 1830322,
+      "OutputFiles": {
+        "LABEL_PDF": [
+          "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAxNDA3MDEyMTU4NTYrMTInMDAnKQovVGl0bGUoU3dlZXRTcG90IEZyZWlnaHQgTGFiZWwpCi9BdXRob3IoU3dlZXRTcG90R3JvdXAuY28ubnopCi9TdWJqZWN0KExhYmVsKQovS2V5d29yZHMoU3dlZXRTcG90R3JvdXAgU3dlZXRTcG90KQovQ3JlYXRvcihQREZzaGFycCAxLjMyLjMwNTctZyBcKHd3dy5wZGZzaGFycC5uZXRcKSkKL1Byb2R1Y2VyKFBERnNoYXJwIDEuMzIuMzA1Ny1nIFwod3d3LnBkZnNoYXJwLm5ldFwpKQo+PgplbmRvYmoKMiAwIG9iago8PAovVHlwZS9DYXRhbG9nCi9QYWdlcyAzIDAgUgo+PgplbmRvYmoKMyAwIG9iago8PAovVHlwZS9QYWdlcwovQ291bnQgMQovS2lkc1s0IDAgUl0KPj4KZW5kb2JqCjQ3ysLfKWv7dlnb10vCb+23PO2u9ZOHQ0ZQ\/evR+A\/Pdtm58bUSMtj2mcHSsE2a1h\/fGzSC9J8Nxt6zWp6vrug\/Tu69kJOzkl2W3YlU+Zkz5\/i5bxVFn\/LasmW7sJ79xo1bubkr3Vkjz2\/frqXeyxs8fvxkEBS9ClD0gCGsCVVZC8lnUR\/FhYKt6PXpEaQ07tWDqukpPeZk1+pkMrlq1NhxuIyVL4p\/nn2WXy+j9q2DYWJyyYeB4W2Xfvglcab2D+Ub0VPhT1OWX7rcfSyeaJl7bNk26xQW3w+W18mO0ZmmdsPAAAAAMCqUBgFHIo0y8XxBQAAAAAA64LCKDCjsy\/99RGxWBxfAAAAAACwTiiMAjMq2pW+Oo\/xOL4AAAAAAGCdUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDDTCb\/P2S20KsfKAYdAAAAAElFTkSuQmCC"
+        ]
+      }
+    }
+  ],
+  "Downloads": [
+    
+  ],
+  "CarrierType": 13,
+  "AlertPath": null
+}
 ```
 
