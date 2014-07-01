@@ -16,13 +16,13 @@ Upon creating the shipment, the print command can also be automatically initiate
 
 ## Parameters
 - **origin** - Specify the unique order number from your source system, that was used as the packing slip no when the order was published
-- **destination** - recepient name
-- **packages** - address line 1, eg, building identifier, like Level 1, Fisher House, etc.
-- **issaturdaydelivery** - address line 2, street name
-- **issignaturerequired** - suburb name
-- **dutiesandtaxesbyreceiver**  - post code, for NZ addresses, this can be left blank if unknown.
-- **ruraloverride** - ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
-- **deliveryreference** - Order number, or customer reference for this order. 
+- **destination** - JSON object of destinationa address
+- **packages** - JSON object array of package objects
+- **issaturdaydelivery** - true/false
+- **issignaturerequired** - true/false
+- **dutiesandtaxesbyreceiver** - true/false
+- **ruraloverride** - true/false
+- **deliveryreference** - string:60, order reference
 - **printtoprinter** - yes/no - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
 
 *origin/destination Object*
@@ -96,45 +96,38 @@ If there are any validation errors these are reported via the *errors* property.
 *Body*
 ``` json
 {
-	"Origin": null,
-	"Destination": {
-		"Id": 0,
-		"Name": "DestinationName",
-		"Address": {
-			"BuildingName": "",
-			"StreetAddress": "DestinationStreetAddress",
-			"Suburb": "Oamaru",
-			"City": "Oamaru",
-			"PostCode": "7980",
-			"CountryCode": "NZ"
-		},
-		"Email": "destinationemail@email.com",
-		"ContactPerson": "DestinationContact",
-		"PhoneNumber": "123456789",
-		"IsRural": false,
-		"DeliveryInstructions": "Desinationdeliveryinstructions",
-		"SendTrackingEmail": false,
-		"CostCentreId": 0,
-		"ExplicitNotRural": false
-	},
-	"Packages": [
-		{
-			"Id": 0,
-			"Name": "Custom",
-			"Length": 10,
-			"Width": 10,
-			"Height": 10,
-			"Kg": 10,
-			"Type": “Box”,
-			“PackageCode” : “A5”
-		}
-	],
-	"IsSaturdayDelivery": false,
-	"IsSignatureRequired": true,
-	"IsUrgentCouriers": false,
-	"DutiesAndTaxesByReceiver": false,
-"RuralOverride": false,
-    "DeliveryReference": "ORDER123"
+  "DeliveryReference": "ORDER123",
+  "Destination": {
+    "Id": 0,
+    "Name": "DestinationName",
+    "Address": {
+      "BuildingName": "",
+      "StreetAddress": "DestinationStreetAddress",
+      "Suburb": "Avonside",
+      "City": "Christchurch",
+      "PostCode": "8061",
+      "CountryCode": "NZ"
+    },
+    "ContactPerson": "DestinationContact",
+    "PhoneNumber": "123456789",
+    "Email": "destinationemail@email.com",
+    "DeliveryInstructions": "Desinationdeliveryinstructions"
+  },
+  "IsSaturdayDelivery": false,
+  "IsSignatureRequired": true,
+  "Packages": [
+    {
+      "Height": 1,
+      "Length": 1,
+      "Id": 0,
+      "Width": 10,
+      "Kg": 0.1,
+      "Name": "GSS-DLE SATCHEL",
+      "PackageCode": "DLE",
+      "Type": "Box"
+    }
+  ],
+  "PrintToPrinter": true
 }
 ```
 
@@ -142,24 +135,37 @@ If there are any validation errors these are reported via the *errors* property.
 **Response** 
 ``` json
 {
-	"CarrierId": 201,
-	"CarrierName": "NZPost Easytrack",
-	"IsFreightForward": false,
-	"Message": "Connote create and print queued.",
-	"Errors": [],
-	"SiteId": 108633,
-	"Consignments": [
-		{
-			"Connote": "NP8102203",
-			"TrackingUrl": "http://gosweetspot.com/track/108633-NP8102203",
-			"Cost": 16.25,
-			"CarrierType": 21,
-			"IsSaturdayDelivery": false,
-			"IsRural": false,
-			"IsOvernight": false,
-			"HasTrackPaks": false
-		}
-	]
+  "CarrierId": 102,
+  "CarrierName": "Post Haste",
+  "IsFreightForward": false,
+  "IsOvernight": true,
+  "IsSaturdayDelivery": false,
+  "IsRural": false,
+  "HasTrackPaks": true,
+  "Message": "Printer invalid. Job created but not queued.",
+  "Errors": [
+    
+  ],
+  "SiteId": 4180,
+  "Consignments": [
+    {
+      "Connote": "SSPOT012863",
+      "TrackingUrl": "http://gosweetspot.com/track/4180-SSPOT012863",
+      "Cost": 7.52,
+      "CarrierType": 13,
+      "IsSaturdayDelivery": false,
+      "IsRural": false,
+      "IsOvernight": true,
+      "HasTrackPaks": true,
+      "ConsignmentId": 1830321,
+      "OutputFiles": null
+    }
+  ],
+  "Downloads": [
+    
+  ],
+  "CarrierType": 13,
+  "AlertPath": null
 }
 ```
 
