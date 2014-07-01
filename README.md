@@ -23,7 +23,7 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 
 ## SDK
 
-- **[C# Sample](https:/github.com/gosweetspot/freight-api-c#-sample)**
+- **[C# Sample](https://github.com/gosweetspot/freight-api-csharp-sample)**
 
 ## Endpoints
 
