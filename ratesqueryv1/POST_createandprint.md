@@ -3,7 +3,7 @@
     POST ratesquery/printcheapestcourier
 
 ## Description
-Once a freight option has been identified using the AvailableRates(https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availablerates.md) method, you can use this method to create the shipment.
+Once a freight option has been identified using the AvailableRates method, you can use this method to create the shipment.
 
 Upon creating the shipment, the print command can also be automatically initiated. This print command requires the Print Agent to be installed and available.
 
@@ -161,6 +161,7 @@ A JSON object with the created shipment details.
 
 
 **Response** 
+
 ``` json
 {
   "CarrierId": 102,
@@ -200,4 +201,5 @@ A JSON object with the created shipment details.
   "AlertPath": null
 }
 ```
+Base64 encoding string has been trimmed for presentation.
 
