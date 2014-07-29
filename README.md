@@ -42,6 +42,7 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 
 - **[<code>POST</code> ratesquery/printcheapestcourier](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_printcheapestcourier.md)**
 - **[<code>POST</code> ratesquery/createandprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_createandprint.md)**
+- **[<code>POST</code> v2/publishmanifest](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_publishmanifest.md)**
 
 ## FAQ
 
