@@ -64,3 +64,4 @@ A JSON object array of order and save status.
 }
 ```
 
+Base64 pdf data has been trimmed for presentation.
