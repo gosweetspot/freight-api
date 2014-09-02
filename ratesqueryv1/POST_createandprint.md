@@ -1,6 +1,6 @@
 # Print Available Rate
 
-    POST ratesquery/printcheapestcourier
+    POST ratesquery/createandprint
 
 ## Description
 Once a freight option has been identified using the [AvailableRates](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availablerates.md) method, you can use this method to create the shipment.
