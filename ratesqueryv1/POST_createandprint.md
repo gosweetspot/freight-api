@@ -51,6 +51,7 @@ You need to extend the AvailableRates post body to include other fields specifie
 - **countrycode** - string:2, ISO Alpha 2 country code, eg, NZ, AU, US, GB, CN, CA, etc.
 
 *package Object*
+- **name** - string:15, package custom name, if none available, use "custom"
 - **length** - decimal, package length in centimetres
 - **width** - decimal, package width in centimetres
 - **height** - decimal, package height  in centimetres
