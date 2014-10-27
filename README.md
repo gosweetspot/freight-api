@@ -37,12 +37,13 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 ### Rates Query
 
 - **[<code>POST</code> ratesquery/availablerates](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availablerates.md)**
- 
+
 ### Create and Print Shipments
 
 - **[<code>POST</code> ratesquery/printcheapestcourier](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_printcheapestcourier.md)**
 - **[<code>POST</code> ratesquery/createandprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_createandprint.md)**
 - **[<code>POST</code> v2/publishmanifest](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_publishmanifest.md)**
+- **[<code>POST</code> ratesquery/reprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_reprint.md)**
 
 ## FAQ
 
@@ -58,5 +59,3 @@ You need to contact your account manager to obtain a test access key.
 
 ### Is there a request rate limit?
 Presently there is no rate limiting on the api. We however reserve the right to enforce limits or block calls at our discretion.
-
-
