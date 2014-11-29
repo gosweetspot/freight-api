@@ -1,4 +1,4 @@
-# Print Cheapest Courier 
+# Print Cheapest Courier
 
     POST ratesquery/printcheapestcourier
 
@@ -24,6 +24,7 @@ Upon creating the shipment, the print command can also be automatically initiate
 - **ruraloverride** - true/false
 - **deliveryreference** - string:60, order reference
 - **printtoprinter** - yes/no - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
+- **outputs** - JSON string array. Return output of label as a PNG or PDF. Acceptable values: "LABEL_PDF"/"LABEL_PNG"
 
 *origin/destination Object*
 - **name** - string:60, Company name or persons name
@@ -38,7 +39,7 @@ Upon creating the shipment, the print command can also be automatically initiate
 
 *address Object*
 - **buildingname** - string:60, property identifier, such as Unit 1, Level 10, Panasonic House, etc
-- **streetaddress** - string:60, street number and name. 
+- **streetaddress** - string:60, street number and name.
 - **suburb** - string:60, suburb name
 - **city** - string:60, city or state name. In countries where there are official states, use use use state abbreviations, such as California = CA, New South Wales = NSW, etc.
 - **postcode** - string:10, postal code
@@ -74,6 +75,7 @@ A JSON object with the created shipment details.
 - **isrural** - true/false - whether delivery identified as rural
 - **isovernight** - true/false - whether service is overnight where delivery is inter island
 - **hastrackpaks** - true/false - whether this shipment has any trackpaks on it
+- **outputs** - JSON object byte array with requested output file as Base64 encoded string
 
 ***
 
@@ -92,7 +94,7 @@ If there are any validation errors these are reported via the *errors* property.
     access_key: [access_key_for_site_account]
     Content-Type: application/json; charset=utf-8
 
-    
+
 
 *Body*
 ``` json
@@ -133,7 +135,7 @@ If there are any validation errors these are reported via the *errors* property.
 ```
 
 
-**Response** 
+**Response**
 ``` json
 {
   "CarrierId": 102,
@@ -145,7 +147,7 @@ If there are any validation errors these are reported via the *errors* property.
   "HasTrackPaks": true,
   "Message": "Printer invalid. Job created but not queued.",
   "Errors": [
-    
+
   ],
   "SiteId": 4180,
   "Consignments": [
@@ -163,10 +165,9 @@ If there are any validation errors these are reported via the *errors* property.
     }
   ],
   "Downloads": [
-    
+
   ],
   "CarrierType": 13,
   "AlertPath": null
 }
 ```
-
