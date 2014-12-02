@@ -47,7 +47,7 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 
 ### Tracking
 
-- **[<code>POST</code> v2/shipmentstatus](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_shipmentstatus.md)**
+- **[<code>POST</code> v2/shipmentstatus](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_ShipmentStatus.md)**
 
 ## FAQ
 
