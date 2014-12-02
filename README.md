@@ -45,6 +45,10 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 - **[<code>POST</code> v2/publishmanifest](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_publishmanifest.md)**
 - **[<code>POST</code> ratesquery/reprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_reprint.md)**
 
+### Tracking
+
+- **[<code>POST</code> v2/shipmentstatus](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_shipmentstatus.md)**
+
 ## FAQ
 
 ### How do I connect to the API?
@@ -59,3 +63,6 @@ You need to contact your account manager to obtain a test access key.
 
 ### Is there a request rate limit?
 Presently there is no rate limiting on the api. We however reserve the right to enforce limits or block calls at our discretion.
+
+### Shoud I crack on?
+Sure, fire away, however, we do suggest you talk to us, prior to starting so we can understand your requirements and explain how best to use this api.
