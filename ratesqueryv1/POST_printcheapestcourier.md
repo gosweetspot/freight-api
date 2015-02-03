@@ -32,7 +32,7 @@ Upon creating the shipment, the print command can also be automatically initiate
 - **isrural** - true/false, optional
 - **deliveryinstructions** - string:120, special instructions to print on the label. For origin this field is ignored.
 - **sendtrackingemail** - true/false, optional
-- **costcenterid** - int, optional
+- **costcentreid** - int, optional
 - **explicitnotrural** - true/false, when true not rural surcharges are added.
 - **address** - JSON Object as described below
 
