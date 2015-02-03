@@ -38,7 +38,7 @@ You need to extend the AvailableRates post body to include other fields specifie
 - **isrural** - true/false, optional
 - **deliveryinstructions** - string:120, special instructions to print on the label. For origin this field is ignored.
 - **sendtrackingemail** - true/false, optional
-- **costcenterid** - int, optional
+- **costcentreid** - int, optional
 - **explicitnotrural** - true/false, when true not rural surcharges are added.
 - **address** - JSON Object as described below
 
