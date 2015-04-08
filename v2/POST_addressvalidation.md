@@ -3,7 +3,8 @@
     POST v2/addressvalidation
 
 ## Description
-Query to get validation customer address details.
+Query to validation customer address details.
+For NZ addresses, the addresses are also validated for Rural Delivery.
 
 ***
 
@@ -88,7 +89,8 @@ None
 			"Suburb": "MascotX",
 			"City": "NSW",
 			"PostCode": "2020",
-			"CountryCode": "Au"
+			"CountryCode": "Au",
+			"IsRural": false
 		},
 		"Email": null,
 		"ContactPerson": null,
