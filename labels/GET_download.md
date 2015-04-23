@@ -13,14 +13,14 @@ Gets the shipment labels in the requested format.
 ***
 
 ## Parameters
-- **format** - optional - available formats are as below. If not supplied, the default is LABEL_PNG_100X175
-      LABEL_PDF - label is presented on an A4 page
-      LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm
-      LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm
-      LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm
-      LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm
+- **format** - optional - available formats are as below. If not supplied, the default is LABEL_PNG_100X175  
+      LABEL_PDF - label is presented on an A4 page  
+      LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm  
+      LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm  
+      LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm  
+      LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm  
 
-      The 100x150 sizing is presently experimental and not available across all carriers.
+      The 100x150 sizing is presently experimental and not available across all carriers.  
 - **rotate** - optional - if the label orientation requires 180 degree rotation
 - **connote** - shipment consignment number to download
 
