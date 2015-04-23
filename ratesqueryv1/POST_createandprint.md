@@ -18,7 +18,7 @@ Upon creating the shipment, the print command can also be automatically initiate
 
 You need to extend the AvailableRates post body to include other fields specified below.
 
-- **QuoteId** - unique quote identifier returned on the *availablerates* query. 
+- **QuoteId** - unique quote identifier returned on the *availablerates* query.
 - **origin** - blank when using site address, or provide one for freight forwards
 - **destination** - JSON obect of recepient address details
 - **packages** - JSON object array of package sizes
@@ -29,7 +29,14 @@ You need to extend the AvailableRates post body to include other fields specifie
 - **deliveryreference** - string:50, order reference
 - **commodities** - JSON object array of customs declared commoditiy information. Only required for international shipments.
 - **printtoprinter** - true/false - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
-- **outputs** - JSON string array. Return output of label as a PNG or PDF. Acceptable values: "LABEL_PDF"/"LABEL_PNG"
+- **outputs** - optional -  JSON string array. Returns output of label as a PNG or PDF. Acceptable values:
+      LABEL_PDF - label is presented on an A4 page
+      LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm
+      LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm
+      LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm
+      LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm
+
+      The 100x150 sizing is presently experimental and not available across all carriers.
 
 *origin/destination Object*
 - **name** - string:60, Company name or persons name
@@ -44,7 +51,7 @@ You need to extend the AvailableRates post body to include other fields specifie
 
 *address Object*
 - **buildingname** - string:60, property identifier, such as Unit 1, Level 10, Panasonic House, etc
-- **streetaddress** - string:60, street number and name. 
+- **streetaddress** - string:60, street number and name.
 - **suburb** - string:60, suburb name
 - **city** - string:60, city or state name. In countries where there are official states, use use use state abbreviations, such as California = CA, New South Wales = NSW, etc.
 - **postcode** - string:10, postal code
@@ -58,7 +65,7 @@ You need to extend the AvailableRates post body to include other fields specifie
 - **kg** - decimal, package weight in kilograms
 - **type** - string:10, package type, eg, Box, Carton, Satchel, Bag, Pallet, etc
 - **packagecode** - string:5, Trackpack codes, such as DLE, A5, A4 (please consult support before providing a value in this field) This feature is not available on all accounts.
- 
+
 *commodity Object*
 - **units** - decimal, how many units
 - **unitvalue** - decimal, value per unit
@@ -103,7 +110,7 @@ A JSON object with the created shipment details.
     access_key: [access_key_for_site_account]
     Content-Type: application/json; charset=utf-8
 
-    
+
 
 *Body*
 ``` json
@@ -161,7 +168,7 @@ A JSON object with the created shipment details.
 ```
 
 
-**Response** 
+**Response**
 
 ``` json
 {
@@ -174,7 +181,7 @@ A JSON object with the created shipment details.
   "HasTrackPaks": true,
   "Message": "Connote created and print queued.",
   "Errors": [
-    
+
   ],
   "SiteId": 4180,
   "Consignments": [
@@ -196,11 +203,10 @@ A JSON object with the created shipment details.
     }
   ],
   "Downloads": [
-    
+
   ],
   "CarrierType": 13,
   "AlertPath": null
 }
 ```
 Base64 encoding string has been trimmed for presentation.
-
