@@ -29,14 +29,14 @@ You need to extend the AvailableRates post body to include other fields specifie
 - **deliveryreference** - string:50, order reference
 - **commodities** - JSON object array of customs declared commoditiy information. Only required for international shipments.
 - **printtoprinter** - true/false - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
-- **outputs** - optional -  JSON string array. Returns output of label as a PNG or PDF. Acceptable values:
-      LABEL_PDF - label is presented on an A4 page
-      LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm
-      LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm
-      LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm
-      LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm
+- **outputs** - optional -  JSON string array. Returns output of label as a PNG or PDF. Acceptable values:  
+      LABEL_PDF - label is presented on an A4 page  
+      LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm  
+      LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm  
+      LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm  
+      LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm  
 
-      The 100x150 sizing is presently experimental and not available across all carriers.
+      The 100x150 sizing is presently experimental and not available across all carriers.  
 
 *origin/destination Object*
 - **name** - string:60, Company name or persons name

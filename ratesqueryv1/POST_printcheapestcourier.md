@@ -24,14 +24,14 @@ Upon creating the shipment, the print command can also be automatically initiate
 - **ruraloverride** - true/false
 - **deliveryreference** - string:60, order reference
 - **printtoprinter** - yes/no - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
-- **outputs** - optional -  JSON string array. Returns output of label as a PNG or PDF. Acceptable values:
-      LABEL_PDF - label is presented on an A4 page
-      LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm
-      LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm
-      LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm
-      LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm
+- **outputs** - optional -  JSON string array. Returns output of label as a PNG or PDF. Acceptable values:  
+      LABEL_PDF - label is presented on an A4 page  
+      LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm  
+      LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm  
+      LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm  
+      LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm  
 
-      The 100x150 sizing is presently experimental and not available across all carriers.
+      The 100x150 sizing is presently experimental and not available across all carriers.  
 
 *origin/destination Object*
 - **name** - string:60, Company name or persons name
