@@ -14,6 +14,7 @@ Requeues the shipment for printing.
 
 ## Parameters
 - **connote** - consignment number to be printed
+- **printtoprinter** - optional - if supplied the access_key profile printer is used
 
 ## Return format
 A string text of response message.

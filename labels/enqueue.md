@@ -32,6 +32,10 @@ Queues the provided image file for printing via the print agent.
                     <td>image</td>
                     <td>byte array of image file. Supported format is *png*. The file size should be 1350px by 1175px</td>
                   </tr>
+                  <tr>
+                    <td>printtoprinter</td>
+                    <td>optional value. If not supplied, the access_key profile printer is used</td>
+                  </tr>
           </table>
     </td>
   </tr>
@@ -64,7 +68,8 @@ Error messages will range in the below
 ``` json
     {
     	"Copies": 1,
-    	"Image": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN1akNDQWlPZ0F3SUJBZ0lKQU02VEt0b09KSWpGTUEwR0NT"
+    	"Image": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN1akNDQWlPZ0F3SUJBZ0lKQU02VEt0b09KSWpGTUEwR0NT",
+      "PrintToPrinter" : "SMITH-PC >> ZDESIGNER LP 2844 (3227)"
     }
 ```
 
