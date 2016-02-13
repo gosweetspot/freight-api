@@ -29,11 +29,16 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 ## Endpoints
 
 #### Customer Orders
+Using this endpoint, you can publish from or ERP or orders system, into the GSS orders queue. Once published, your operators on GSS will be able to seach/scan/click on the order number, to automatically populate the order delivery details. This saves time entering the delivery details.
 
 - **[<code>GET</code> v2/pendingorders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_pendingorders.md)**
+Retreive a list of published orders pending to be completed on GSS
 - **[<code>GET</code> v2/order](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_order.md)**
+Retreive a single order
 - **[<code>POST</code> v2/neworder](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworder.md)**
+Post/Publish a new order
 - **[<code>POST</code> v2/neworders](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworders.md)**
+Post/Publish a new orders
 
 ### Rates Query
 
@@ -95,9 +100,13 @@ Freight API currently returns data in [JSON](http:/json.org/ "JSON") format.  So
 ### What kind of authentication is required?
 Applications must identify themselves to access any resource.
 You need to contact your account manager to obtain a test access key.
+Every request requires a http header property ACCESS_KEY, as well as SUPPORT_EMAIL. The Support Email should contain the IT Level contact for the organisation. This will be used to contacting you, should we find your requests need attention.
 
 ### Is there a request rate limit?
 Presently there is no rate limiting on the api. We however reserve the right to enforce limits or block calls at our discretion.  We request that you limit your requests to 60 calls per minute. If you expect to call at a higher rates, please contact us.
+
+### Backwards Compatibility
+We try to make every effort to ensure all our functions are backwards compatible.  However as our system evolves, we cannot guarrantee that we will be able to support all old/deprecated functions forever.  If you implementation breaks due to a change on our system, it will be your responsibility to update the functionality on your system.
 
 ### Should I crack on?
 Sure, fire away, however, we do suggest you talk to us, prior to starting so we can understand your requirements and explain how best to use this api.
