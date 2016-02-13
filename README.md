@@ -28,11 +28,16 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 ## Endpoints
 
 #### Publish Orders
+Using this endpoint, you can publish from or ERP or orders system, into the GSS orders queue. Once published, your operators on GSS will be able to seach/scan/click on the order number, to automatically populate the order delivery details.  This saves time entering the delivery details.
 
 - **[<code>GET</code> v2/pendingorders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_pendingorders.md)**
+Retreive a list of published orders pending to be completed on GSS
 - **[<code>GET</code> v2/order](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_order.md)**
+Retreive a single order
 - **[<code>POST</code> v2/neworder](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworder.md)**
+Post/Publish a new order
 - **[<code>POST</code> v2/neworders](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworders.md)**
+Post/Publish a new orders
 
 ### Rates Query
 
