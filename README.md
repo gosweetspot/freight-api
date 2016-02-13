@@ -62,6 +62,7 @@ Freight API currently returns data in [JSON](http:/json.org/ "JSON") format.  So
 ### What kind of authentication is required?
 Applications must identify themselves to access any resource.
 You need to contact your account manager to obtain a test access key.
+Every request requires a http header property *ACCESS_KEY*, as well as *SUPPORT_EMAIL*. The Support Email should contain the IT Level contact for the organisation. This will be used to contacting you, should we find your requests need attention.
 
 ### Is there a request rate limit?
 Presently there is no rate limiting on the api. We however reserve the right to enforce limits or block calls at our discretion.
