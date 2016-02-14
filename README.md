@@ -20,6 +20,7 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 * Ensure you calls to the api are capable of handling errors and downtime
 * Fields may be added to the endpoints are any time, ensure you conversions are capable of handling this
 * Fields names are not case sensitive
+* If you system has more then one company utilising it, it is strongly recommended to not hardcode the access key and the api url
 
 ## SDK
 
@@ -27,12 +28,17 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 
 ## Endpoints
 
-#### Publish Orders
+#### Customer Orders
+Using this endpoint, you can publish from or ERP or orders system, into the GSS orders queue. Once published, your operators on GSS will be able to seach/scan/click on the order number, to automatically populate the order delivery details. This saves time entering the delivery details.
 
 - **[<code>GET</code> v2/pendingorders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_pendingorders.md)**
+Retreive a list of published orders pending to be completed on GSS
 - **[<code>GET</code> v2/order](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_order.md)**
+Retreive a single order
 - **[<code>POST</code> v2/neworder](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworder.md)**
+Post/Publish a new order
 - **[<code>POST</code> v2/neworders](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworders.md)**
+Post/Publish a new orders
 
 ### Rates Query
 
@@ -47,9 +53,41 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 - **[<code>POST</code> v2/deleteconnote](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_deleteconnote.md)**
 - **[<code>GET</code> labels/download](https://github.com/gosweetspot/freight-api/blob/master/labels/GET_download.md)**
 
-### Tracking
+### Shipments
+- **[<code>GET</code> /api/shipments](https://github.com/gosweetspot/freight-api/blob/master/shipments/get.md)** returns all shipments filtered by date, number, etc
 
-- **[<code>POST</code> v2/shipmentstatus](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_ShipmentStatus.md)**
+### Printing
+- **[<code>GET</code> /api/printers](https://github.com/gosweetspot/freight-api/blob/master/printers/get.md)** returns a list of available printers
+
+- **[<code>GET</code> /api/labels](https://github.com/gosweetspot/freight-api/blob/master/labels/get.md)** download the labels as png or pdf
+
+- **[<code>POST</code> /api/labels](https://github.com/gosweetspot/freight-api/blob/master/labels/post.md)** enqueues the supplied shipment for printing
+
+- **[<code>POST</code> /api/labels/enqueue](https://github.com/gosweetspot/freight-api/blob/master/labels/enqueue.md)** enqueues a raw image into the print queue for printing
+
+
+## SOME COMMON USE CASES
+### You have a custom bespoke e-commerce or orders platform
+Your site does not allow external systems to feed information into it directly.
+Your approach will be to publish orders to GSS once the orders are ready for dispatch/labelling. On the GSS system your user would process the order.
+At some stage your system will request the order status update from GSS.
+The api interactions would be:
+1. **[<code>POST</code> v2/neworder](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworder.md)** - triggered from your site when order is ready for ticketting
+2. Using the GSS web portal, your dispatcher tickets the goods.
+3. **[<code>GET</code> v2/order](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_order.md)** - triggered by your system every 6 hours, to get status update on the order published earlier.
+
+### You have a very specialised dispatch workflow
+You might have a special requirement to integrate the ticketing directly into your existing system.  Using a external system to do one part of the workflow may affect performance and may not be acceptable.  You can use the GSS api to build the ticketing into your system.
+The api interactions would be:
+1. **[<code>POST</code> ratesquery/availablerates](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availablerates.md)** - your system at dispatch, calls the api to get all available freight options and rates
+2. **[<code>POST</code> ratesquery/createandprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_createandprint.md)** - the dispatcher reviews the freight options from (1) and makes a selection. A second call to generate the shipment is triggered.
+
+### You use an open source platform
+A lot of open source systems, also have a open api platform that GSS is able to tap into to build the integration directly from within GSS. We would consider any platform that our customers are using.  However depending on platform popularity the implementation time frames would be considered.  In the case that there are very few users on the platform, it may not be a sufficient business case for us to undertake the integration.
+
+### Others
+Surely there will be other cases that the api can be applied to.  Talk to us, and we will be able to help.
+
 
 ## FAQ
 
@@ -62,9 +100,13 @@ Freight API currently returns data in [JSON](http:/json.org/ "JSON") format.  So
 ### What kind of authentication is required?
 Applications must identify themselves to access any resource.
 You need to contact your account manager to obtain a test access key.
+Every request requires a http header property ACCESS_KEY, as well as SUPPORT_EMAIL. The Support Email should contain the IT Level contact for the organisation. This will be used to contacting you, should we find your requests need attention.
 
 ### Is there a request rate limit?
-Presently there is no rate limiting on the api. We however reserve the right to enforce limits or block calls at our discretion.
+Presently there is no rate limiting on the api. We however reserve the right to enforce limits or block calls at our discretion.  We request that you limit your requests to 60 calls per minute. If you expect to call at a higher rates, please contact us.
 
-### Shoud I crack on?
+### Backwards Compatibility
+We try to make every effort to ensure all our functions are backwards compatible.  However as our system evolves, we cannot guarrantee that we will be able to support all old/deprecated functions forever.  If you implementation breaks due to a change on our system, it will be your responsibility to update the functionality on your system.
+
+### Should I crack on?
 Sure, fire away, however, we do suggest you talk to us, prior to starting so we can understand your requirements and explain how best to use this api.
