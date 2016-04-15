@@ -58,7 +58,7 @@ Surely there will be other cases that the api can be applied to.  Talk to us, an
 Using this endpoint, you can publish from your ERP or orders system, into the GSS orders queue. Once published, your operators on GSS will be able to search/scan/click on the order number, to automatically populate the order delivery details. This saves time entering the delivery details.
 
 
-- **[<code>GET</code> api/customerorders](/api/customerorders/get.md)**
+- **[<code>GET</code> api/customerorders](/customerorders/get.md)**
 Retreives the list of orders already published to GSS. This can be filtered on multiple criteria.
 - **[<code>PUT</code> api/customerorders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_order.md)**
 Publish into the GSS queue your orders.
