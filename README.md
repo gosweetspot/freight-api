@@ -20,50 +20,12 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 * Ensure you calls to the api are capable of handling errors and downtime
 * Fields may be added to the endpoints are any time, ensure you conversions are capable of handling this
 * Fields names are not case sensitive
-* If you system has more then one company utilising it, it is strongly recommended to not hardcode the access key and the api url
+* If your system has more then one company utilising it, it is strongly recommended that you do not hardcode the access key and the api url
 
 ## SDK
 
 - **[C# Sample](https://github.com/gosweetspot/freight-api-csharp-sample)**
 
-## Endpoints
-
-#### Customer Orders
-Using this endpoint, you can publish from or ERP or orders system, into the GSS orders queue. Once published, your operators on GSS will be able to seach/scan/click on the order number, to automatically populate the order delivery details. This saves time entering the delivery details.
-
-- **[<code>GET</code> v2/pendingorders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_pendingorders.md)**
-Retreive a list of published orders pending to be completed on GSS
-- **[<code>GET</code> v2/order](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_order.md)**
-Retreive a single order
-- **[<code>POST</code> v2/neworder](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworder.md)**
-Post/Publish a new order
-- **[<code>POST</code> v2/neworders](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_neworders.md)**
-Post/Publish a new orders
-
-### Rates Query
-
-- **[<code>POST</code> ratesquery/availablerates](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availablerates.md)**
-
-### Create and Print Shipments
-
-- **[<code>POST</code> ratesquery/printcheapestcourier](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_printcheapestcourier.md)**
-- **[<code>POST</code> ratesquery/createandprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_createandprint.md)**
-- **[<code>POST</code> v2/publishmanifest](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_publishmanifest.md)**
-- **[<code>POST</code> ratesquery/reprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_reprint.md)**
-- **[<code>POST</code> v2/deleteconnote](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_deleteconnote.md)**
-- **[<code>GET</code> labels/download](https://github.com/gosweetspot/freight-api/blob/master/labels/GET_download.md)**
-
-### Shipments
-- **[<code>GET</code> /api/shipments](https://github.com/gosweetspot/freight-api/blob/master/shipments/get.md)** returns all shipments filtered by date, number, etc
-
-### Printing
-- **[<code>GET</code> /api/printers](https://github.com/gosweetspot/freight-api/blob/master/printers/get.md)** returns a list of available printers
-
-- **[<code>GET</code> /api/labels](https://github.com/gosweetspot/freight-api/blob/master/labels/get.md)** download the labels as png or pdf
-
-- **[<code>POST</code> /api/labels](https://github.com/gosweetspot/freight-api/blob/master/labels/post.md)** enqueues the supplied shipment for printing
-
-- **[<code>POST</code> /api/labels/enqueue](https://github.com/gosweetspot/freight-api/blob/master/labels/enqueue.md)** enqueues a raw image into the print queue for printing
 
 
 ## SOME COMMON USE CASES
@@ -88,6 +50,50 @@ A lot of open source systems, also have a open api platform that GSS is able to 
 ### Others
 Surely there will be other cases that the api can be applied to.  Talk to us, and we will be able to help.
 
+
+
+## Endpoints
+
+#### Customer Orders
+Using this endpoint, you can publish from your ERP or orders system, into the GSS orders queue. Once published, your operators on GSS will be able to search/scan/click on the order number, to automatically populate the order delivery details. This saves time entering the delivery details.
+
+
+- **[<code>GET</code> api/customerorders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_pendingorders.md)**
+Retreives the list of orders already published to GSS. This can be filtered on multiple criteria.
+- **[<code>PUT</code> api/customerorders](https://github.com/gosweetspot/freight-api/blob/master/v2/GET_order.md)**
+Publish into the GSS queue your orders.
+
+### Price Enquiry / Rates Query
+
+- **[<code>POST</code> api/rates](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_availablerates.md)** Returns your available rates for the origin to destination specified.
+
+### Creating Shipments
+
+- **[<code>GET</code> api/shipments](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_printcheapestcourier.md)** Retreives all your historically created shipments, including current status details.
+- **[<code>POST</code> api/shipments](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_createandprint.md)** Create a new shipment using a rate or with auto rating. Printing can be automatically triggered as well.
+- **[<code>DELETE</code> api/shipments](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_deleteconnote.md)** Deletes the specified shipment.
+
+### Manifesting
+- **[<code>POST</code> v2/publishmanifest](https://github.com/gosweetspot/freight-api/blob/master/v2/POST_publishmanifest.md)** Batch and manifest your current shipments ready for collection. Available on certain carriers only.
+
+### Printing
+- **[<code>GET</code> /api/printers](https://github.com/gosweetspot/freight-api/blob/master/printers/get.md)** returns a list of available printers
+
+- **[<code>GET</code> /api/labels](https://github.com/gosweetspot/freight-api/blob/master/labels/get.md)** download the labels as png or pdf
+
+- **[<code>POST</code> /api/labels](https://github.com/gosweetspot/freight-api/blob/master/labels/post.md)** enqueues the supplied shipment for printing
+
+- **[<code>POST</code> /api/labels/enqueue](https://github.com/gosweetspot/freight-api/blob/master/labels/enqueue.md)** enqueues a raw image into the print queue for printing
+
+- **[<code>POST</code> ratesquery/reprint](https://github.com/gosweetspot/freight-api/blob/master/ratesqueryv1/POST_reprint.md)**
+- **[<code>GET</code> labels/download](https://github.com/gosweetspot/freight-api/blob/master/labels/GET_download.md)**
+
+### Webhooks
+GSS is able to provide feedback to your site using webhooks for certain action triggers.
+Actions that can be subscibed to include:
+- Shipment created
+- Shipment pickup registered by courier
+- Shipment delivery registered by courier
 
 ## FAQ
 
