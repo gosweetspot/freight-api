@@ -135,7 +135,108 @@ A JSON object with the created shipment details.
 ***
 
 
-## Example
+## Example - Domestic Outbound Shipment
+**Request**
+
+    POST http://api.gosweetspot.com/api/shipments
+
+*Headers*
+
+    access_key: [access_key_for_site_account]
+    Content-Type: application/json; charset=utf-8
+
+
+*Body*
+``` json
+{
+    "Origin": null,
+    "Destination": {
+        "Name": "DestinationName",
+        "Address": {
+            "BuildingName": "",
+            "StreetAddress": "DestinationStreetAddress",
+            "Suburb": "Avonside",
+            "City": "Christchurch",
+            "PostCode": "8061",
+            "CountryCode": "NZ"
+        },
+        "Email": "destinationemail@email.com",
+        "ContactPerson": "DestinationContact",
+        "PhoneNumber": "123456789",
+        "IsRural": false,
+        "DeliveryInstructions": "Desinationdeliveryinstructions",
+        "SendTrackingEmail": false,
+        "ExplicitNotRural": false
+    },
+    "Packages": [
+        {
+            "Name": "GSS-DLE SATCHEL",
+            "Length": 1,
+            "Width": 10,
+            "Height": 1,
+            "Kg": 0.1,
+        }
+    ],
+    "Commodities": null,
+    "IsSaturdayDelivery": false,
+    "IsSignatureRequired": true,
+    "IsUrgentCouriers": false,
+    "DutiesAndTaxesByReceiver": false,
+    "RuralOverride": false,
+    "DeliveryReference": "ORDER123",
+    "PrintToPrinter": "false",
+    "Carrier": "Post Haste"
+}
+
+
+
+```
+
+
+**Response**
+
+``` json
+{
+    "CarrierId": 102,
+    "CarrierName": "Post Haste",
+    "IsFreightForward": false,
+    "IsOvernight": false,
+    "IsSaturdayDelivery": false,
+    "IsRural": false,
+    "HasTrackPaks": false,
+    "Message": "Connote created and print queued.",
+    "AddressLabelMessage": null,
+    "AddressLabelError": null,
+    "Errors": [],
+    "SiteId": 4180,
+    "Consignments": [
+        {
+            "Connote": "SSPOT018667",
+            "TrackingUrl": "http://gosweetspot.com/track/4180-SSPOT018667",
+            "Cost": 4.07,
+            "CarrierType": 13,
+            "IsSaturdayDelivery": false,
+            "IsRural": false,
+            "IsOvernight": false,
+            "HasTrackPaks": false,
+            "ConsignmentId": 6215942,
+            "OutputFiles": null,
+            "Items": null
+        }
+    ],
+    "Downloads": [],
+    "CarrierType": 13,
+    "AlertPath": null,
+    "Notifications": [],
+    "HasSaturdayDeliveryLabel": false
+}
+```
+Base64 encoding string has been trimmed for presentation.
+
+
+
+
+## Example - Domestic Inbound/Returns Shipment
 **Request**
 
     http://api.gosweetspot.com/ratesqueryv1/createandprint
@@ -150,55 +251,77 @@ A JSON object with the created shipment details.
 *Body*
 ``` json
 {
-  "QuoteId": "f2878ff8-107f-4ca3-9d2e-3ca943b6d808",
-  "DeliveryReference": "ORDER123",
-  "Destination": {
-    "Id": 0,
-    "Name": "DestinationName",
-    "Address": {
-      "BuildingName": "",
-      "StreetAddress": "DestinationStreetAddress",
-      "Suburb": "Avonside",
-      "City": "Christchurch",
-      "PostCode": "8061",
-      "CountryCode": "NZ"
+    "Origin": {
+        "Id": 0,
+        "Name": "Bob Jones",
+        "Address": {
+            "BuildingName": "",
+            "StreetAddress": "Bob Jones Close",
+            "Suburb": "Avonside",
+            "City": "Christchurch",
+            "PostCode": "8061",
+            "CountryCode": "NZ"
+        },
+        "Email": "destinationemail@email.com",
+        "ContactPerson": "DestinationContact",
+        "PhoneNumber": "123456789",
+        "IsRural": false,
+        "DeliveryInstructions": "Desinationdeliveryinstructions",
+        "SendTrackingEmail": false,
+        "CostCentreId": 0,
+        "ExplicitNotRural": false
     },
-    "ContactPerson": "DestinationContact",
-    "PhoneNumber": "123456789",
-    "Email": "destinationemail@email.com",
-    "DeliveryInstructions": "Desinationdeliveryinstructions"
-  },
-  "IsSaturdayDelivery": false,
-  "IsSignatureRequired": true,
-  "Packages": [
-    {
-      "Height": 1,
-      "Length": 1,
-      "Id": 0,
-      "Width": 10,
-      "Kg": 0.1,
-      "Name": "GSS-DLE SATCHEL",
-      "PackageCode": "DLE",
-      "Type": "Box"
-    }
-  ],
-  "PrintToPrinter": true,
-  "Commodities": [
-    {
-      "Description": "Apparel",
-      "UnitKg": 0.33,
-      "UnitValue": 1,
-      "Units": 1,
-      "Country": "NZ",
-      "Currency": "NZD"
-    }
-  ],
-  "Outputs": [
-    "LABEL_PDF"
-  ]
+    "Destination": {
+        "Id": 0,
+        "Name": "DestinationName",
+        "Address": {
+            "BuildingName": "",
+            "StreetAddress": "DestinationStreetAddress",
+            "Suburb": "Avondale",
+            "City": "Auckland",
+            "PostCode": "0600",
+            "CountryCode": "NZ"
+        },
+        "Email": "destinationemail@email.com",
+        "ContactPerson": "DestinationContact",
+        "PhoneNumber": "123456789",
+        "IsRural": false,
+        "DeliveryInstructions": "Desinationdeliveryinstructions",
+        "SendTrackingEmail": false,
+        "CostCentreId": 0,
+        "ExplicitNotRural": false
+    },
+    "Packages": [
+        {
+            "Id": 0,
+            "Name": "GSS-DLE SATCHEL",
+            "Length": 1,
+            "Width": 10,
+            "Height": 1,
+            "Kg": 0.1,
+            "PackageCode": 0
+        }
+    ],
+    "Commodities": null,
+    "IsSaturdayDelivery": false,
+    "IsSignatureRequired": true,
+    "IsUrgentCouriers": false,
+    "DutiesAndTaxesByReceiver": false,
+    "RuralOverride": false,
+    "DeliveryReference": "ORDER123",
+    "PrintToPrinter": "false",
+    "Outputs": null,
+    "CarrierId": 0,
+    "Carrier": "Post Haste",
+    "Service": null,
+    "SiteId": 0,
+    "IncludeLineDetails": false,
+    "ShipType": 1,
+    "HasDG": false,
+    "DangerousGoods": null,
+    "DisableFreightForwardEmails": false,
+    "IncludeInsurance": false
 }
-
-
 
 ```
 
@@ -207,41 +330,299 @@ A JSON object with the created shipment details.
 
 ``` json
 {
-  "CarrierId": 102,
-  "CarrierName": "Post Haste",
-  "IsFreightForward": false,
-  "IsOvernight": true,
-  "IsSaturdayDelivery": false,
-  "IsRural": false,
-  "HasTrackPaks": true,
-  "Message": "Connote created and print queued.",
-  "Errors": [
-
-  ],
-  "SiteId": 4180,
-  "Consignments": [
-    {
-      "Connote": "SSPOT012864",
-      "TrackingUrl": "http://gosweetspot.com/track/4180-SSPOT012864",
-      "Cost": 9.22,
-      "CarrierType": 13,
-      "IsSaturdayDelivery": false,
-      "IsRural": false,
-      "IsOvernight": true,
-      "HasTrackPaks": true,
-      "ConsignmentId": 1830322,
-      "OutputFiles": {
-        "LABEL_PDF": [
-          "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAxNDA3MDEyMTU4NTYrMTInMDAnKQovVGl0bGUoU3dlZXRTcG90IEZyZWlnaHQgTGFiZWwpCi9BdXRob3IoU3dlZXRTcG90R3JvdXAuY28ubnopCi9TdWJqZWN0KExhYmVsKQovS2V5d29yZHMoU3dlZXRTcG90R3JvdXAgU3dlZXRTcG90KQovQ3JlYXRvcihQREZzaGFycCAxLjMyLjMwNTctZyBcKHd3dy5wZGZzaGFycC5uZXRcKSkKL1Byb2R1Y2VyKFBERnNoYXJwIDEuMzIuMzA1Ny1nIFwod3d3LnBkZnNoYXJwLm5ldFwpKQo+PgplbmRvYmoKMiAwIG9iago8PAovVHlwZS9DYXRhbG9nCi9QYWdlcyAzIDAgUgo+PgplbmRvYmoKMyAwIG9iago8PAovVHlwZS9QYWdlcwovQ291bnQgMQovS2lkc1s0IDAgUl0KPj4KZW5kb2JqCjQ3ysLfKWv7dlnb10vCb+23PO2u9ZOHQ0ZQ\/evR+A\/Pdtm58bUSMtj2mcHSsE2a1h\/fGzSC9J8Nxt6zWp6vrug\/Tu69kJOzkl2W3YlU+Zkz5\/i5bxVFn\/LasmW7sJ79xo1bubkr3Vkjz2\/frqXeyxs8fvxkEBS9ClD0gCGsCVVZC8lnUR\/FhYKt6PXpEaQ07tWDqukpPeZk1+pkMrlq1NhxuIyVL4p\/nn2WXy+j9q2DYWJyyYeB4W2Xfvglcab2D+Ub0VPhT1OWX7rcfSyeaJl7bNk26xQW3w+W18mO0ZmmdsPAAAAAMCqUBgFHIo0y8XxBQAAAAAA64LCKDCjsy\/99RGxWBxfAAAAAACwTiiMAjMq2pW+Oo\/xOL4AAAAAAGCdUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDjUBgFAAAAAAAAsONQGAUAAAAAAACw41AYBQAAAAAAALDDTCb\/P2S20KsfKAYdAAAAAElFTkSuQmCC"
-        ]
-      }
-    }
-  ],
-  "Downloads": [
-
-  ],
-  "CarrierType": 13,
-  "AlertPath": null
+    "CarrierId": 129,
+    "CarrierName": "Post Haste",
+    "IsFreightForward": true,
+    "IsOvernight": false,
+    "IsSaturdayDelivery": false,
+    "IsRural": false,
+    "HasTrackPaks": false,
+    "Message": "Connote created and print queued.",
+    "AddressLabelMessage": null,
+    "AddressLabelError": null,
+    "Errors": [],
+    "SiteId": 4180,
+    "Consignments": [
+        {
+            "Connote": "AIG00012137",
+            "TrackingUrl": "http://gosweetspot.com/track/4180-AIG00012137",
+            "Cost": 14.8,
+            "CarrierType": 18,
+            "IsSaturdayDelivery": false,
+            "IsRural": false,
+            "IsOvernight": false,
+            "HasTrackPaks": false,
+            "ConsignmentId": 6215943,
+            "OutputFiles": null,
+            "Items": null
+        }
+    ],
+    "Downloads": [],
+    "CarrierType": 18,
+    "AlertPath": null,
+    "Notifications": [],
+    "HasSaturdayDeliveryLabel": false
 }
 ```
+Base64 encoding string has been trimmed for presentation.
+
+
+
+
+## Example - Domestic Outbound Shipment with Dangerous Goods
+**Request**
+
+    http://api.gosweetspot.com/ratesqueryv1/createandprint
+
+*Headers*
+
+    access_key: [access_key_for_site_account]
+    Content-Type: application/json; charset=utf-8
+
+
+
+*Body*
+``` json
+{
+    "Origin": null,
+    "Destination": {
+        "Id": 0,
+        "Name": "DestinationName",
+        "Address": {
+            "BuildingName": "",
+            "StreetAddress": "DestinationStreetAddress",
+            "Suburb": "Avonside",
+            "City": "Christchurch",
+            "PostCode": "8061",
+            "CountryCode": "NZ"
+        },
+        "Email": "destinationemail@email.com",
+        "ContactPerson": "DestinationContact",
+        "PhoneNumber": "123456789",
+        "IsRural": false,
+        "DeliveryInstructions": "Desinationdeliveryinstructions",
+        "SendTrackingEmail": false,
+        "CostCentreId": 0,
+        "ExplicitNotRural": false
+    },
+    "Packages": [
+        {
+            "Id": 0,
+            "Name": "GSS-DLE SATCHEL",
+            "Length": 1,
+            "Width": 10,
+            "Height": 1,
+            "Kg": 0.1,
+            "PackageCode": 0
+        }
+    ],
+    "Commodities": null,
+    "IsSaturdayDelivery": false,
+    "IsSignatureRequired": true,
+    "IsUrgentCouriers": false,
+    "DutiesAndTaxesByReceiver": false,
+    "RuralOverride": false,
+    "DeliveryReference": "ORDER123",
+    "PrintToPrinter": "false",
+    "QuoteId": "00000000-0000-0000-0000-000000000000",
+    "Outputs": [
+        10
+    ],
+    "CarrierId": 0,
+    "Carrier": "Post Haste",
+    "Service": null,
+    "SiteId": 0,
+    "IncludeLineDetails": false,
+    "ShipType": 1,
+    "HasDG": true,
+    "DangerousGoods": {
+        "AdditionalHandlingInfo": "Some info",
+        "HazchemCode": "HC",
+        "IsRadioActive": false,
+        "CargoAircraftOnly": false,
+        "LineItems": [
+            {
+                "ConsignmentId": 0,
+                "Description": "desc",
+                "ClassOrDivision": "class",
+                "UNorIDNo": "",
+                "PackingGroup": "",
+                "SubsidaryRisk": "",
+                "Packing": "",
+                "PackingInstr": "",
+                "Authorization": ""
+            }
+        ]
+    },
+    "DisableFreightForwardEmails": false,
+    "IncludeInsurance": false
+}
+
+```
+
+
+**Response**
+
+``` json
+{
+    "CarrierId": 102,
+    "CarrierName": "Post Haste",
+    "IsFreightForward": false,
+    "IsOvernight": false,
+    "IsSaturdayDelivery": false,
+    "IsRural": false,
+    "HasTrackPaks": false,
+    "Message": "Connote created and print queued.",
+    "AddressLabelMessage": null,
+    "AddressLabelError": null,
+    "Errors": [],
+    "SiteId": 4180,
+    "Consignments": [
+        {
+            "Connote": "SSPOT018668",
+            "TrackingUrl": "http://gosweetspot.com/track/4180-SSPOT018668",
+            "Cost": 4.07,
+            "CarrierType": 13,
+            "IsSaturdayDelivery": false,
+            "IsRural": false,
+            "IsOvernight": false,
+            "HasTrackPaks": false,
+            "ConsignmentId": 6215944,
+            "OutputFiles": {
+                "DG_FORM_PDF": [
+                    "JVBERi0xLjQKJdP0zOEKMSAwIG9iago8PAovQ3JlYXRpb25EYXRlKEQ6MjAxNjA0MTYxMDI5MTIrMTInMDAnKQovQ3JlYXRvcihQREZzaGFycCAxLjMyLjMwNTctRU9GCg=="
+                ]
+            },
+            "Items": null
+        }
+    ],
+    "Downloads": [],
+    "CarrierType": 13,
+    "AlertPath": null,
+    "Notifications": [],
+    "HasSaturdayDeliveryLabel": false
+}
+```
+Base64 encoding string has been trimmed for presentation.
+
+
+## Example - International Outbound Shipment
+**Request**
+
+    http://api.gosweetspot.com/ratesqueryv1/createandprint
+
+*Headers*
+
+    access_key: [access_key_for_site_account]
+    Content-Type: application/json; charset=utf-8
+
+
+
+*Body*
+``` json
+{
+    "Origin": null,
+    "Destination": {
+        "Id": 0,
+        "Name": "DestinationName",
+        "Address": {
+            "BuildingName": "",
+            "StreetAddress": "DestinationStreetAddress",
+            "Suburb": "Mascot",
+            "City": "NSW",
+            "PostCode": "2020",
+            "CountryCode": "AU"
+        },
+        "Email": "destinationemail@email.com",
+        "ContactPerson": "DestinationContact",
+        "PhoneNumber": "123456789",
+        "IsRural": false,
+        "DeliveryInstructions": "Desinationdeliveryinstructions",
+        "SendTrackingEmail": false,
+        "CostCentreId": 0,
+        "ExplicitNotRural": false
+    },
+    "Packages": [
+        {
+            "Id": 0,
+            "Name": "Custom",
+            "Length": 20,
+            "Width": 30,
+            "Height": 50,
+            "Kg": 10,
+            "PackageCode": 0
+        }
+    ],
+    "Commodities": [
+        {
+            "HarmonizedCode": null,
+            "Description": "Mens Socks",
+            "UnitValue": 50.5,
+            "Units": 10,
+            "UnitKg": 1,
+            "Country": "NZ",
+            "Currency": "NZD"
+        }
+    ],
+    "IsSaturdayDelivery": false,
+    "IsSignatureRequired": true,
+    "IsUrgentCouriers": false,
+    "DutiesAndTaxesByReceiver": false,
+    "RuralOverride": false,
+    "DeliveryReference": "ORDER123",
+    "PrintToPrinter": "false",
+    "QuoteId": "00000000-0000-0000-0000-000000000000",
+    "Outputs": null,
+    "CarrierId": 0,
+    "Carrier": "FedEx",
+    "Service": null,
+    "SiteId": 0,
+    "IncludeLineDetails": false,
+    "ShipType": 1,
+    "HasDG": false,
+    "DangerousGoods": null,
+    "DisableFreightForwardEmails": false,
+    "IncludeInsurance": false
+}
+
+```
+
+
+**Response**
+
+``` json
+{
+    "CarrierId": 96,
+    "CarrierName": "FedEx",
+    "IsFreightForward": false,
+    "IsOvernight": false,
+    "IsSaturdayDelivery": false,
+    "IsRural": false,
+    "HasTrackPaks": false,
+    "Message": "Connote created and print queued.",
+    "AddressLabelMessage": null,
+    "AddressLabelError": null,
+    "Errors": [],
+    "SiteId": 4180,
+    "Consignments": [
+        {
+            "Connote": "782847803802",
+            "TrackingUrl": "http://gosweetspot.com/track/4180-782847803802",
+            "Cost": 67.17,
+            "CarrierType": 4,
+            "IsSaturdayDelivery": false,
+            "IsRural": false,
+            "IsOvernight": false,
+            "HasTrackPaks": false,
+            "ConsignmentId": 6215945,
+            "OutputFiles": null,
+            "Items": null
+        }
+    ],
+    "Downloads": [],
+    "CarrierType": 4,
+    "AlertPath": null,
+    "Notifications": [],
+    "HasSaturdayDeliveryLabel": false
+}```
 Base64 encoding string has been trimmed for presentation.

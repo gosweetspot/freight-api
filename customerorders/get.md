@@ -1,4 +1,4 @@
-# Pending Orders
+# Customer Orders
 
     GET api/customerorders
 
@@ -13,7 +13,6 @@ Get the list of customer orders published to the queue. You can filter on proces
 ***
 
 ## Parameters
-- none
 <table>
   <tr>
     <th colspan="2">Parameters</th>

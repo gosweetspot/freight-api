@@ -1,4 +1,4 @@
-# Submit New Order Batched
+# Submit New Customer Order Batched
 
     PUT api/customerorders
 

@@ -35,7 +35,7 @@ Your approach will be to publish orders to GSS once the orders are ready for dis
 At some stage your system will request the order status update from GSS.
 The api interactions would be:
 <br />
-1. **[<code>POST</code> api/customerorders](customerorders/post.md)** - triggered from your site when order is ready for ticketting
+1. **[<code>PUT</code> api/customerorders](customerorders/put.md)** - triggered from your site when order is ready for ticketting
 <br />
 2. Using the GSS web portal, your dispatcher tickets the goods.
 <br />
