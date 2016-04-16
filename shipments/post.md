@@ -135,7 +135,9 @@ A JSON object with the created shipment details.
 ***
 
 
-## Example - Domestic Outbound Shipment
+## Example 1 - Domestic Outbound Shipment
+This is a simple outbound, or sending out from your site, shipment.
+
 **Request**
 
     POST http://api.gosweetspot.com/api/shipments
@@ -187,9 +189,6 @@ A JSON object with the created shipment details.
     "PrintToPrinter": "false",
     "Carrier": "Post Haste"
 }
-
-
-
 ```
 
 
@@ -236,23 +235,24 @@ Base64 encoding string has been trimmed for presentation.
 
 
 
-## Example - Domestic Inbound/Returns Shipment
+## Example 2 - Domestic Inbound/Returns Shipment
+Creating a shipment for getting a shipment picked from an external location. The destination of the shipment can be you or even a 3rd party.
+This will create a freight forward shipment, and generate an email that will be sent to the *Origin* contacts email address with the courier label attached, as well as location booking instructions.
+In the case that you want to suppress the automatic email you can provide an additional attribute *DisableFreightForwardEmails=true*.
+
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/createandprint
+    POST http://api.gosweetspot.com/api/shipments
 
 *Headers*
 
     access_key: [access_key_for_site_account]
     Content-Type: application/json; charset=utf-8
 
-
-
 *Body*
 ``` json
 {
     "Origin": {
-        "Id": 0,
         "Name": "Bob Jones",
         "Address": {
             "BuildingName": "",
@@ -266,13 +266,9 @@ Base64 encoding string has been trimmed for presentation.
         "ContactPerson": "DestinationContact",
         "PhoneNumber": "123456789",
         "IsRural": false,
-        "DeliveryInstructions": "Desinationdeliveryinstructions",
-        "SendTrackingEmail": false,
-        "CostCentreId": 0,
-        "ExplicitNotRural": false
+        "DeliveryInstructions": "Desinationdeliveryinstructions"
     },
     "Destination": {
-        "Id": 0,
         "Name": "DestinationName",
         "Address": {
             "BuildingName": "",
@@ -288,18 +284,14 @@ Base64 encoding string has been trimmed for presentation.
         "IsRural": false,
         "DeliveryInstructions": "Desinationdeliveryinstructions",
         "SendTrackingEmail": false,
-        "CostCentreId": 0,
-        "ExplicitNotRural": false
     },
     "Packages": [
         {
-            "Id": 0,
             "Name": "GSS-DLE SATCHEL",
             "Length": 1,
             "Width": 10,
             "Height": 1,
             "Kg": 0.1,
-            "PackageCode": 0
         }
     ],
     "Commodities": null,
@@ -307,7 +299,6 @@ Base64 encoding string has been trimmed for presentation.
     "IsSignatureRequired": true,
     "IsUrgentCouriers": false,
     "DutiesAndTaxesByReceiver": false,
-    "RuralOverride": false,
     "DeliveryReference": "ORDER123",
     "PrintToPrinter": "false",
     "Outputs": null,
@@ -369,10 +360,13 @@ Base64 encoding string has been trimmed for presentation.
 
 
 
-## Example - Domestic Outbound Shipment with Dangerous Goods
+## Example 3 - Domestic Outbound Shipment with Dangerous Goods
+Creating a standard Outbound shipment which contain Dangerous Goods.
+This is the same as a standard outbound, with the additional details of the DG.  The response body will contain a base64 ecoded binary stream of the DG PDF that needs to be printed to a A4 printer.
+
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/createandprint
+    POST http://api.gosweetspot.com/api/shipment
 
 *Headers*
 
@@ -424,7 +418,6 @@ Base64 encoding string has been trimmed for presentation.
     "RuralOverride": false,
     "DeliveryReference": "ORDER123",
     "PrintToPrinter": "false",
-    "QuoteId": "00000000-0000-0000-0000-000000000000",
     "Outputs": [
         10
     ],
@@ -506,10 +499,12 @@ Base64 encoding string has been trimmed for presentation.
 Base64 encoding string has been trimmed for presentation.
 
 
-## Example - International Outbound Shipment
+## Example 4 - International Outbound Shipment
+Sending overseas. These shipment require addtional details for goods description for customs reasons. This is provided in the *Commodities* property.
+
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/createandprint
+    POST http://api.gosweetspot.com/api/shipments
 
 *Headers*
 
@@ -538,19 +533,15 @@ Base64 encoding string has been trimmed for presentation.
         "PhoneNumber": "123456789",
         "IsRural": false,
         "DeliveryInstructions": "Desinationdeliveryinstructions",
-        "SendTrackingEmail": false,
-        "CostCentreId": 0,
-        "ExplicitNotRural": false
+        "SendTrackingEmail": false
     },
     "Packages": [
         {
-            "Id": 0,
             "Name": "Custom",
             "Length": 20,
             "Width": 30,
             "Height": 50,
             "Kg": 10,
-            "PackageCode": 0
         }
     ],
     "Commodities": [
@@ -571,7 +562,6 @@ Base64 encoding string has been trimmed for presentation.
     "RuralOverride": false,
     "DeliveryReference": "ORDER123",
     "PrintToPrinter": "false",
-    "QuoteId": "00000000-0000-0000-0000-000000000000",
     "Outputs": null,
     "CarrierId": 0,
     "Carrier": "FedEx",
@@ -582,6 +572,127 @@ Base64 encoding string has been trimmed for presentation.
     "HasDG": false,
     "DangerousGoods": null,
     "DisableFreightForwardEmails": false,
+    "IncludeInsurance": false
+}
+
+```
+
+
+**Response**
+
+``` json
+{
+    "CarrierId": 96,
+    "CarrierName": "FedEx",
+    "IsFreightForward": false,
+    "IsOvernight": false,
+    "IsSaturdayDelivery": false,
+    "IsRural": false,
+    "HasTrackPaks": false,
+    "Message": "Connote created and print queued.",
+    "AddressLabelMessage": null,
+    "AddressLabelError": null,
+    "Errors": [],
+    "SiteId": 4180,
+    "Consignments": [
+        {
+            "Connote": "782847803802",
+            "TrackingUrl": "http://gosweetspot.com/track/4180-782847803802",
+            "Cost": 67.17,
+            "CarrierType": 4,
+            "IsSaturdayDelivery": false,
+            "IsRural": false,
+            "IsOvernight": false,
+            "HasTrackPaks": false,
+            "ConsignmentId": 6215945,
+            "OutputFiles": null,
+            "Items": null
+        }
+    ],
+    "Downloads": [],
+    "CarrierType": 4,
+    "AlertPath": null,
+    "Notifications": [],
+    "HasSaturdayDeliveryLabel": false
+}```
+Base64 encoding string has been trimmed for presentation.
+
+
+## Example 5 - Shipment with Pre-Rated pricing
+
+Prior to creating shipments, you can use the **[<code>POST</code> api/rates](rates/post.md)** method to get the possible rate options.  If you would like to utilise one of these options, your workflow will be somewhat different.
+
+1. Call **[<code>POST</code> api/rates](rates/post.md)** to get the available rate options. Each rate contains a *QuoteId*, retain this.
+2. By some process of selection, identify the rate to use from (1) and get the *QuoteId*
+3. Now call the current *api/shipments* method to generate a new shipment using the rates associated to the *QuoteId*. On the request message provide an additional property *QuoteId* with its value.
+
+Note: When a *QuoteId* is not provided, the *Carrier* and *Service* properties are used to auto-rate and select the carrier/service to create against.  If either of this values are not provided the request will fail. The properties *Carrier* and *Service* can be wildcarded with '*' which will resolve to the first available rate, prioritising on cheapest first.
+
+**Request**
+
+    POST http://api.gosweetspot.com/api/shipments
+
+*Headers*
+
+    access_key: [access_key_for_site_account]
+    Content-Type: application/json; charset=utf-8
+
+
+
+*Body*
+``` json
+{
+    "QuoteId": "000-5465-65454-654564",
+    "Origin": null,
+    "Destination": {
+        "Id": 0,
+        "Name": "DestinationName",
+        "Address": {
+            "BuildingName": "",
+            "StreetAddress": "DestinationStreetAddress",
+            "Suburb": "Mascot",
+            "City": "NSW",
+            "PostCode": "2020",
+            "CountryCode": "AU"
+        },
+        "Email": "destinationemail@email.com",
+        "ContactPerson": "DestinationContact",
+        "PhoneNumber": "123456789",
+        "IsRural": false,
+        "DeliveryInstructions": "Desinationdeliveryinstructions",
+        "SendTrackingEmail": false
+    },
+    "Packages": [
+        {
+            "Name": "Custom",
+            "Length": 20,
+            "Width": 30,
+            "Height": 50,
+            "Kg": 10,
+        }
+    ],
+    "Commodities": [
+        {
+            "HarmonizedCode": null,
+            "Description": "Mens Socks",
+            "UnitValue": 50.5,
+            "Units": 10,
+            "UnitKg": 1,
+            "Country": "NZ",
+            "Currency": "NZD"
+        }
+    ],
+    "IsSaturdayDelivery": false,
+    "IsSignatureRequired": true,
+    "IsUrgentCouriers": false,
+    "DutiesAndTaxesByReceiver": false,
+    "RuralOverride": false,
+    "DeliveryReference": "ORDER123",
+    "PrintToPrinter": "false",
+    "Outputs": null,
+    "IncludeLineDetails": false,
+    "HasDG": false,
+    "DangerousGoods": null,
     "IncludeInsurance": false
 }
 
