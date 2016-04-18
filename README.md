@@ -90,9 +90,6 @@ Publish into the GSS queue your orders.
 
 - **[<code>POST</code> /api/labels/enqueue](labels/enqueue.md)** enqueues a raw image into the print queue for printing
 
-- **[<code>POST</code> ratesquery/reprint](labels/ratesqueryv1/POST_reprint.md)**
-- **[<code>GET</code> labels/download](labels/GET_download.md)**
-
 ### Webhooks
 GSS is able to provide feedback to your site using webhooks for certain action triggers.
 Actions that can be subscibed to include:
