@@ -21,6 +21,7 @@ Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
 * Fields may be added to the endpoints are any time, ensure you conversions are capable of handling this
 * Fields names are not case sensitive
 * If your system has more then one company utilising it, it is strongly recommended that you do not hardcode the access key and the api url
+* This api was fully refresh on 18 Apr 2016. If you implementation was done prior to that, we suggest you update your implementation. The old version docs can be found [here](https://github.com/gosweetspot/freight-api/tree/version1-final).
 
 ## SDK
 
