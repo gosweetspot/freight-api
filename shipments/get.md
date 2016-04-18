@@ -62,105 +62,98 @@ Get status updates for shipments
                         <td valign="top">results[]</td>
                         <td>
                             a list of up to 250 shipments
-
-
+                            <table>
+                                <tr>
+                                    <td>ConsignmentNo</td>
+                                    <td>string</td>
+                                    <td>shipment consignment number</td>
+                                </tr>
+                                <tr>
+                                    <td>Consignee</td>
+                                    <td>string</td>
+                                    <td>shipment consignee name</td>
+                                </tr>
+                                <tr>
+                                    <td>ManualTicket</td>
+                                    <td>boolean</td>
+                                    <td>False when the shipment originated from an external orders source, such as an integrated system or shopfiy. True when the ticket was create using the GSS UI.</td>
+                                </tr>
+                                <tr>
+                                    <td>PackingSlipNo</td>
+                                    <td>string</td>
+                                    <td>Order/packing slip number for integrated orders or Delivery Reference when created using the GSS UI.</td>
+                                </tr>
+                                <tr>
+                                    <td>Picked</td>
+                                    <td>date time</td>
+                                    <td>date/time goods picked by courier. Time local to pickup origin</td>
+                                </tr>
+                                <tr>
+                                    <td>Delivered</td>
+                                    <td>date time</td>
+                                    <td>date/time goods delivered to receiver. Time local to delivery address</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>string</td>
+                                    <td>latest courier tracking status of the shipment</td>
+                                </tr>
+                                <tr>
+                                    <td>TotalCost</td>
+                                    <td>decimal</td>
+                                    <td>total cost of the shipment excluding taxes where applicable</td>
+                                </tr>
+                                <tr>
+                                    <td>Tracking</td>
+                                    <td>string</td>
+                                    <td>track and trace url for live tracking of the order</td>
+                                </tr>
+                                <tr>
+                                    <td>Events</td>
+                                    <td>return[] <br />struct</td>
+                                    <td>
+                                        a list of track and trace events per part of the shipment
                                         <table>
                                             <tr>
-                                                <td>ConsignmentNo</td>
+                                                <td>Part</td>
                                                 <td>string</td>
-                                                <td>shipment consignment number</td>
+                                                <td>shipment part number</td>
                                             </tr>
                                             <tr>
-                                                <td>Consignee</td>
+                                                <td>Code</td>
                                                 <td>string</td>
-                                                <td>shipment consignee name</td>
-                                            </tr>
-                                            <tr>
-                                                <td>ManualTicket</td>
-                                                <td>boolean</td>
-                                                <td>False when the shipment originated from an external orders source, such as an integrated system or shopfiy. True when the ticket was create using the GSS UI.</td>
-                                            </tr>
-                                            <tr>
-                                                <td>PackingSlipNo</td>
-                                                <td>string</td>
-                                                <td>Order/packing slip number for integrated orders or Delivery Reference when created using the GSS UI.</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Picked</td>
-                                                <td>date time</td>
-                                                <td>date/time goods picked by courier. Time local to pickup origin</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Delivered</td>
-                                                <td>date time</td>
-                                                <td>date/time goods delivered to receiver. Time local to delivery address</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Status</td>
-                                                <td>string</td>
-                                                <td>latest courier tracking status of the shipment</td>
-                                            </tr>
-                                            <tr>
-                                                <td>TotalCost</td>
-                                                <td>decimal</td>
-                                                <td>total cost of the shipment excluding taxes where applicable</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tracking</td>
-                                                <td>string</td>
-                                                <td>track and trace url for live tracking of the order</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Events</td>
-                                                <td>return[] <br />struct</td>
                                                 <td>
-                                                    a list of track and trace events per part of the shipment
-                                                    <table>
-                                                        <tr>
-                                                            <td>Part</td>
-                                                            <td>string</td>
-                                                            <td>shipment part number</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Code</td>
-                                                            <td>string</td>
-                                                            <td>
-                                                                event milestone code.<br />
-                                                                <ul>
-                                                                    <li>CR - Created</li>
-                                                                    <li>PUP - Picked up from sender</li>
-                                                                    <li>UPD - Courier status update provided</li>
-                                                                    <li>EXP - delivery exception, or service update</li>
-                                                                </ul>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Description</td>
-                                                            <td>string</td>
-                                                            <td>Event description</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>eventDt</td>
-                                                            <td>date time</td>
-                                                            <td>date/time of event/activity local to location of event</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Location</td>
-                                                            <td>string</td>
-                                                            <td>Area/locality of where the event occurred</td>
-                                                        </tr>
-                                                    </table>
+                                                    event milestone code.<br />
+                                                    <ul>
+                                                        <li>CR - Created</li>
+                                                        <li>PUP - Picked up from sender</li>
+                                                        <li>UPD - Courier status update provided</li>
+                                                        <li>EXP - delivery exception, or service update</li>
+                                                    </ul>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td>Description</td>
+                                                <td>string</td>
+                                                <td>Event description</td>
+                                            </tr>
+                                            <tr>
+                                                <td>eventDt</td>
+                                                <td>date time</td>
+                                                <td>date/time of event/activity local to location of event</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Location</td>
+                                                <td>string</td>
+                                                <td>Area/locality of where the event occurred</td>
+                                            </tr>
                                         </table>
-
-
-
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                 </table>
-
             </td>
         </tr>
     </table>
