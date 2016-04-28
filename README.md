@@ -98,6 +98,9 @@ Actions that can be subscibed to include:
 - Shipment pickup registered by courier
 - Shipment delivery registered by courier
 
+    [Configuration & Post data](webhooks/config.md)
+
+
 ## FAQ
 
 ### How do I connect to the API?
