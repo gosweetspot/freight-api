@@ -87,7 +87,7 @@ When *QuoteId* is supplied, the *carrier* and *service* fields are ignored.  The
 *commodity Object*
 - **description** - string50, description of good
 - **harmonizedcode** - string50, customs related HS Code for goods.
-- **units** - decimal, how many units
+- **units** - integer, how many units
 - **unitvalue** - decimal, value per unit
 - **unitkg** - decimal, weight in kg per unit
 - **currency** - string:3, declared value currency designation, eg NZD, AUD, USD
