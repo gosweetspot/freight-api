@@ -31,6 +31,19 @@ The body of the message should be sent as an JSON array.
 - **contactname** - name of person, optional.
 - **contactphone** - phone number of person, optional.
 - **email** - email address for track & trace email, optional.
+- **products** - optional, JSON object of product descriptions
+
+** products ** json object
+- **productcode** - string:20, your unique product code for the good.
+- **description** - string:20, goods description of the product
+- **units** - decimal, number of units of product
+- **unitvalue** - decimal, per unit value of product
+- **countryofmanufacture** - string:2, ISO Alpha 1 code of country, eg, NZ, AU
+- **unitkg** - decimal, per unit weight in KG
+- **imageurl** - string:500, product image url if available. Should be an open/public url.
+- **currency** - string:3, currency code for value, eg NZD, AUD, USD
+
+
 
 ***
 
@@ -72,7 +85,26 @@ None
     "delvinstructions": null,
     "contactname": null,
     "contactphone": null,
-    "email": null
+    "email": null,
+    "Products": [{
+        "productcode": "ABC",
+        "Description": "Wall Paint",
+        "Units": 1.0,
+        "UnitValue": 10.0,
+        "CountryofManufacture": null,
+        "UnitKg": 1.0,
+        "ImageUrl": null,
+        "Currency": "NZD"
+    }, {
+        "productcode": "DCF",
+        "Description": "Wall Art",
+        "Units": 1.0,
+        "UnitValue": 10.0,
+        "CountryofManufacture": null,
+        "UnitKg": 1.0,
+        "ImageUrl": null,
+        "Currency": "NZD"
+    }]
   },
   {
     "packingslipno": "test2-14-07-01",

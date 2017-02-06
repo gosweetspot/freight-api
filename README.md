@@ -100,6 +100,11 @@ Actions that can be subscibed to include:
 
     [Configuration & Post data](webhooks/config.md)
 
+### Tracing Your Calls
+We allow you to view your most recent api calls to us. To view use https://ship.gosweetspot.com/developer/apitrace
+This is provided to help you develop/debug your code.
+
+
 
 ## FAQ
 
