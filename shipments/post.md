@@ -614,7 +614,8 @@ Sending overseas. These shipment require addtional details for goods description
     "AlertPath": null,
     "Notifications": [],
     "HasSaturdayDeliveryLabel": false
-}```
+}
+```
 Base64 encoding string has been trimmed for presentation.
 
 
@@ -735,5 +736,6 @@ Note: When a *QuoteId* is not provided, the *Carrier* and *Service* properties a
     "AlertPath": null,
     "Notifications": [],
     "HasSaturdayDeliveryLabel": false
-}```
+}
+```
 Base64 encoding string has been trimmed for presentation.
