@@ -37,9 +37,9 @@ At some stage your system will request the order status update from GSS.
 The api interactions would be:
 <br />
 1. **[<code>PUT</code> api/customerorders](customerorders/put.md)** - triggered from your site when order is ready for ticketting
-<br />
+
 2. Using the GSS web portal, your dispatcher tickets the goods.
-<br />
+
 3. **[<code>GET</code> api/customerorders](customerorders/get.md)** - triggered by your system every 6 hours, to get status update on the order published earlier.
 
 ### You have a very specialised dispatch workflow
@@ -47,7 +47,7 @@ You might have a special requirement to integrate the ticketing directly into yo
 The api interactions would be:
 <br />
 1. **[<code>POST</code> api/rates](rates/post.md)** - your system at dispatch, calls the api to get all available freight options and rates
-<br />
+
 2. **[<code>POST</code> api/shipments](shipments/post.md)** - the dispatcher reviews the freight options from (1) and makes a selection. A second call to generate the shipment is triggered.
 
 ### You use an open source platform
@@ -90,6 +90,9 @@ Publish into the GSS queue your orders.
 - **[<code>POST</code> /api/labels](labels/post.md)** enqueues the supplied shipment for printing
 
 - **[<code>POST</code> /api/labels/enqueue](labels/enqueue.md)** enqueues a raw image into the print queue for printing
+
+### Pickup Booking
+- **[<code>POST</code> /api/pickupbooking](pickupbooking/post.md)** book a driver to collect your parcels.
 
 ### Webhooks
 GSS is able to provide feedback to your site using webhooks for certain action triggers.
