@@ -38,7 +38,7 @@ Http 409 - Max consignment limit 50 exceeded.
 ## Example
 **Request**
 ```
-http://api.gosweetspot.com/api/shipments?id="SSPOT014115","SSPOT014114","SSPOT014113","SSPOT014112"
+http://api.gosweetspot.com/api/shipments?id=SSPOT014115,SSPOT014114,SSPOT014113,SSPOT014112
 ```
 *Headers*
 
