@@ -1,6 +1,6 @@
 # Delete Consignment
 
-    DLETE api/shipments
+    DELETE api/shipments
 
 ## Description
 Delete an unprocessed consignment from the system.
@@ -33,25 +33,21 @@ Valid outcome states are
 ***
 
 ## Errors
-Http 409 - Max consignmnet limit 50 exceeded.
+Http 409 - Max consignment limit 50 exceeded.
 
 ***
 
 ## Example
 **Request**
-
-    http://api.gosweetspot.com/v2/deleteconnote
-
+```
+http://api.gosweetspot.com/api/shipments?id="SSPOT014115","SSPOT014114","SSPOT014113","SSPOT014112"
+```
 *Headers*
 
     access_key: [access_key_for_site_account]
     Content-Type: application/json; charset=utf-8
     Accept: application/json  
-
-*Query String*
-``` json
-?id="SSPOT014115","SSPOT014114","SSPOT014113","SSPOT014112"
-```
+    
 **Response**
 ``` json
 {
