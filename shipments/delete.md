@@ -14,9 +14,7 @@ Delete an unprocessed consignment from the system.
 
 ## Parameters
 
-The body of the message should be sent as an JSON array.
-
-A JSON list of consignment numbers.
+A comma seperated list of consignment numbers to be deleted.
 
 A maximum of 50 consignments can be deleted per call.
 
