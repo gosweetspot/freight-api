@@ -48,17 +48,10 @@ Http 409 - Max consignmnet limit 50 exceeded.
     Content-Type: application/json; charset=utf-8
     Accept: application/json  
 
-*Body*
+*Query String*
 ``` json
-[
-  "SSPOT014115",
-  "SSPOT014114",
-  "SSPOT014113",
-  "SSPOT014112"
-]
+?id="SSPOT014115","SSPOT014114","SSPOT014113","SSPOT014112"
 ```
-
-
 **Response**
 ``` json
 {
