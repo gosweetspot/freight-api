@@ -80,7 +80,7 @@ Publish into the GSS queue your orders.
 - **[<code>DELETE</code> api/shipments](shipments/delete.md)** Deletes the specified shipment.
 
 ### Manifesting
-- **[<code>POST</code> v2/publishmanifest](manifests/post.md)** Batch and manifest your current shipments ready for collection. Available on certain carriers only.
+- **[<code>POST</code> v2/publishmanifest](v2/POST_publishmanifest.md)** Batch and manifest your current shipments ready for collection. Available on certain carriers only.
 
 ### Printing
 - **[<code>GET</code> /api/printers](printers/get.md)** returns a list of available printers
