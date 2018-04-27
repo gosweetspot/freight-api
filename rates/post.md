@@ -56,7 +56,7 @@ A JSON object array of available rates. These are group into *Available*, *Hidde
 The *Hidden* rates, are available rates, but have been filtered out due to user preference, based on cost centre, or destination courier preference.
 
 **Available/Hidden**
-- **quoteId** - unqiue rates calculation identifier
+- **quoteId** - unique rates calculation identifier
 - **carriername** - display name of courier provider
 - **deliverytype** - courier delivery/service type
 - **cost** - freight cost
