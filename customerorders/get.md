@@ -41,6 +41,10 @@ Get the list of customer orders published to the queue. You can filter on proces
     <td>pagesize</td>
     <td>how many records to return per page. Default = 100 records</td>
   </tr>
+      <tr>
+    <td>includeProducts</td>
+    <td>true/false - when true, each customer order record will also include the product lines associated with the record.</td>
+  </tr>
 </table>
 
 ***
