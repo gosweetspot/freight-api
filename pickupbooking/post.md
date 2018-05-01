@@ -35,7 +35,7 @@ TIL Freight cannot be booked through this endpoint. However, when you manifest T
 ***
 
 ## Parameters
-- **Carrier** - Specify the carrier to book a pickup for. Supported values: "CastleParcel", "PostHaste", "NZCouriers", "Mainstream", "FedEx", "NZPost", "FirstGlobal". Mandatory field.
+- **Carrier** - Specify the carrier to book a pickup for. Supported values: "CastleParcel", "PostHaste", "NZCouriers", "Mainstream", "FedEx", "NZPost", "FirstGlobal". This value can be obtained from the AvailableServices endpoint. Mandatory field.
 - **Consignments** - An array of consignment number strings representing the consignments to be picked up. This field is mandatory when booking for *Mainstream*, *FedEx* and *NZPost*. You can include it for other carriers but it will do nothing.
 - **TotalKg** - A decimal number indicating the total weight of parcels. This field is mandatory when booking for *FirstGlobal*. You can include it for other carriers but it will do nothing.
 - **Parts** - An integer number indicating the total number of parcels. This field is mandatory when booking for *FirstGlobal*. You can include it for other carriers but it will do nothing.
