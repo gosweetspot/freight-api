@@ -55,11 +55,27 @@ A string indicating whether or not the pickup request was lodged successfully. T
 
 
 
-*Body*
+*Body (for FedEx, NZPost, Mainstream)
 ``` json
 {
   "Carrier": "FedEx",
   "Consignments":["789663088020"]
+}
+```
+
+*Body (for FirstGlobal)
+``` json
+{
+  "Carrier": "FirstGlobal",
+  "TotalKg": 1.5,
+  "Parts": 1
+}
+```
+
+*Body (for others)
+``` json
+{
+  "Carrier": "PostHaste"
 }
 ```
 
