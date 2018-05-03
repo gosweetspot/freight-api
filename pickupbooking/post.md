@@ -3,7 +3,7 @@
     POST api/bookpickup
 
 ## Description
-Query to book a driver to pick up from your location. They will make a best effort attempt to pick up on the same day - however, if you book after 2PM it is recommended that you book again in the morning if they don't pick up on the same day.
+Query to book a driver to pick up from your location. They will make a best effort attempt to pick up on the same day - however, if you book after 2PM it is recommended that you book again in the morning if they don't pick up on the same day. Each call to this endpoint will ping the driver, so do not call this endpoint excessively.
 
 This query is supported for the following companies:
 
