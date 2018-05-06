@@ -3,7 +3,7 @@
     POST api/bookpickup
 
 ## Description
-Query to book a driver to pick up from your location. They will make a best effort attempt to pick up on the same day - however, if you book after 2PM it is recommended that you book again in the morning if they don't pick up on the same day. Each call to this endpoint will ping the driver, so do not call this endpoint excessively.
+Query to book a driver to pick up from your location. They will make a best effort attempt to pick up on the same day - however, if you book after 2PM it is recommended that you book again in the morning if they don't pick up on the same day.
 
 This query is supported for the following companies:
 
@@ -13,20 +13,6 @@ This query is supported for the following companies:
 
 - New Zealand Couriers
 
-- Mainstream Freight
-
-- Fedex
-
-- New Zealand Post
-
-- First Global Logistics
-
-### Mainstream Freight
-When booking for Mainstream Freight you must manifest the consignments first using this [endpoint]( https://github.com/gosweetspot/freight-api/blob/master/v2/POST_publishmanifest.md).
-
-### TIL Freight
-TIL Freight cannot be booked through this endpoint. However, when you manifest TIL Freight consignments it will be booked at the same time. Use the above link for manifesting.
-
 ***
 
 ## Requires authentication
@@ -35,13 +21,10 @@ TIL Freight cannot be booked through this endpoint. However, when you manifest T
 ***
 
 ## Parameters
-- **Carrier** - Specify the carrier to book a pickup for. Supported values: "CastleParcel", "PostHaste", "NZCouriers", "Mainstream", "FedEx", "NZPost", "FirstGlobal". This value can be obtained from the AvailableServices endpoint. Mandatory field.
-- **Consignments** - An array of consignment number strings representing the consignments to be picked up. This field is mandatory when booking for *Mainstream*, *FedEx* and *NZPost*. You can include it for other carriers but it will do nothing.
-- **TotalKg** - A decimal number indicating the total weight of parcels. This field is mandatory when booking for *FirstGlobal*. You can include it for other carriers but it will do nothing.
-- **Parts** - An integer number indicating the total number of parcels. This field is mandatory when booking for *FirstGlobal*. You can include it for other carriers but it will do nothing.
+- **Carrier** - Specify the carrier to book a pickup for. Supported values: "CastleParcel", "PostHaste" and "NZCouriers".
 
 ## Return format
-A string indicating whether or not the pickup request was lodged successfully. The HTTP status code will be 200 if successful.
+A string indicating whether or not the pickup request was lodged successfully.
 
 ## Example
 **Request**
@@ -55,24 +38,7 @@ A string indicating whether or not the pickup request was lodged successfully. T
 
 
 
-*Body (for FedEx, NZPost, Mainstream)
-``` json
-{
-  "Carrier": "FedEx",
-  "Consignments":["789663088020"]
-}
-```
-
-*Body (for FirstGlobal)
-``` json
-{
-  "Carrier": "FirstGlobal",
-  "TotalKg": 1.5,
-  "Parts": 1
-}
-```
-
-*Body (for others)
+*Body*
 ``` json
 {
   "Carrier": "PostHaste"
