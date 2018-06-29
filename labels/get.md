@@ -13,39 +13,22 @@ Gets the shipment labels in the requested format, png or pdf.
 ***
 
 ## Parameters
-<table>
-      <tr>
-        <th>Field</th>
-        <th>Required?</th>
-        <th>Description</th>
-      </tr>
-        <tr>
-            <td valign="top">**format**</td>
-            <td valign="top">optional</td>
-            <td>
-              available formats are as below. If not supplied, the default is LABEL_PNG_100X175  
+|Field|Required?|Description|
+|--- |--- |--- |
+|**connote**|required|Shipment consignment number to download.|
+|**format**|optional|The format of the label. See below section for available formats.|
+|**rotate**|optional|true or false. Specify this if the label requires rotation.|
 
-              <ul>
-                <li>LABEL_PDF - label is presented on an A4 page  </li>
-                <li>LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm</li>
-                <li>LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm</li>
-                <li>LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm</li>
-                <li>LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm </li>
-                <li>The 100x150 sizing is presently experimental and not available across all carriers.</li>
-              </ul>
-            </td>
-        </tr>
-        <tr>
-          <td>**rotate**</td>
-          <td>optional</td>
-          <td>if the label orientation requires 180 degree rotation</td>
-        </tr>
-        <tr>
-          <td>**connote**</td>
-          <td>required</td>
-          <td>shipment consignment number to download</td>
-        </tr>
-</table>
+
+
+### Available format types:
+
++ LABEL_PDF - label is presented on an A4 page  </li>
++ LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm
++ LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm
++ LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm
++ LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm
++ The 100x150 sizing is presently experimental and not available across all carriers.	
 
 ***
 
