@@ -82,7 +82,6 @@ When *QuoteId* is supplied, the *carrier* and *service* fields are ignored.  The
 - **height** - integer, package height  in centimetres
 - **kg** - decimal, package weight in kilograms
 - **type** - string:10, package type, eg, Box, Carton, Satchel, Bag, Pallet, etc
-- **packagecode** - string:5, Trackpack codes, such as DLE, A5, A4 (please consult support before providing a value in this field) This feature is not available on all accounts.
 
 *commodity Object*
 - **description** - string50, description of good
@@ -406,8 +405,7 @@ This is the same as a standard outbound, with the additional details of the DG. 
             "Length": 1,
             "Width": 10,
             "Height": 1,
-            "Kg": 0.1,
-            "PackageCode": 0
+            "Kg": 0.1
         }
     ],
     "Commodities": null,
