@@ -42,7 +42,7 @@ The body of the message should be sent as an JSON array.
 - **unitkg** - decimal, per unit weight in KG
 - **imageurl** - string:500, product image url if available. Should be an open/public url.
 - **currency** - string:3, currency code for value, eg NZD, AUD, USD
-
+- **alreadySent** - decimal, units of product that have already been sent prior to this shipment. This should be less than the "units" provided.
 
 
 ***
