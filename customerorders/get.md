@@ -67,7 +67,7 @@ Get the list of customer orders published to the queue. You can filter on proces
 - **notrural** - override and declared as not rural.
 - **costcentre** - cost centre to use.
 - **status** - JSON object of current status
-- **Products** - JSON list of line items on order
+- **products** - JSON list of line items on order
 
 ### Status
 - **status** - current status.
@@ -133,7 +133,7 @@ Get the list of customer orders published to the queue. You can filter on proces
                 "Delivered": "2016-02-23T12:46:45",
                 "manualticket": true
             },
-		"Products": [{
+		"products": [{
 				"productcode": "ABC",
 				"description": "WALL PAINT",
 				"units": 1.00000000,
@@ -173,7 +173,7 @@ Get the list of customer orders published to the queue. You can filter on proces
                 "Delivered": "2016-02-24T08:42:22",
                 "manualticket": true
             },
-		"Products": [{
+		"products": [{
 				"productcode": "ABC",
 				"description": "WALL PAINT",
 				"units": 1.00000000,
@@ -213,7 +213,7 @@ Get the list of customer orders published to the queue. You can filter on proces
                 "Delivered": "2016-02-26T08:11:14",
                 "manualticket": true
             },
-		"Products": [{
+		"products": [{
 				"productcode": "ABC",
 				"description": "WALL PAINT",
 				"units": 1.00000000,
