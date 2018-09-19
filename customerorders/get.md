@@ -50,8 +50,7 @@ Get the list of customer orders published to the queue. You can filter on proces
 ***
 
 ## Return format
-An array orders:
-
+### Root Object
 - **packingslipno** - unique order number or packing slip number from your system
 - **consignee** - receipient name
 - **address1** - address line 2, street name
@@ -68,16 +67,28 @@ An array orders:
 - **notrural** - override and declared as not rural.
 - **costcentre** - cost centre to use.
 - **status** - JSON object of current status
+- **Products** - JSON list of line items on order
 
-
-** status ** json object
+### Status
 - **status** - current status.
 - **ticketnumber** - if printed already, the current ticket number
 - **trackingurl** - url to track the order
 - **picked** - local date time of when shipment was picked up
 - **delivered** - local date time of when shipment was Delivered
 - **manualticket** - true/false - whether the ticket was created manually or via an integrated channel feed.
-***
+
+### Products
+- **productcode** - SKU of Product
+- **description** - Name of Product
+- **units"** - Units ordered
+- **unitvalue** - Value per unit
+- **countryofManufacture** ISO Alpha 2 country code, eg NZ, AU, US, UK, CN
+- **unitkg** - Weight per unit
+- **imageurl** - An image of the product
+- **currency** - 3 letter code for currency
+- **alreadySent** - Amount of product fulfilled prior to this order
+- **fulfilledQty** - Amount of product fulfilled on this order
+- **linetotal"** - Total value of this order
 
 ## Example
 **Request**
@@ -122,20 +133,20 @@ An array orders:
                 "Delivered": "2016-02-23T12:46:45",
                 "manualticket": true
             },
-			"Products": [{
-					"productcode": "ABC",
-					"description": "WALL PAINT",
-					"units": 1.00000000,
-					"unitvalue": 10.0000,
-					"countryofManufacture": "",
-					"unitkg": 1.00000000,
-					"imageurl": null,
-					"currency": "NZD",
-					"alreadySent": 0.00000000,
-					"fulfilledQty": 1.00000000,
-					"linetotal": 10.000000000000
-				}
-			]
+		"Products": [{
+				"productcode": "ABC",
+				"description": "WALL PAINT",
+				"units": 1.00000000,
+				"unitvalue": 10.0000,
+				"countryofManufacture": "",
+				"unitkg": 1.00000000,
+				"imageurl": null,
+				"currency": "NZD",
+				"alreadySent": 0.00000000,
+				"fulfilledQty": 1.00000000,
+				"linetotal": 10.000000000000
+			}
+		]
         },
         {
             "packingslipno": "SSORDER13668",
@@ -162,20 +173,20 @@ An array orders:
                 "Delivered": "2016-02-24T08:42:22",
                 "manualticket": true
             },
-			"Products": [{
-					"productcode": "ABC",
-					"description": "WALL PAINT",
-					"units": 1.00000000,
-					"unitvalue": 10.0000,
-					"countryofManufacture": "",
-					"unitkg": 1.00000000,
-					"imageurl": null,
-					"currency": "NZD",
-					"alreadySent": 0.00000000,
-					"fulfilledQty": 1.00000000,
-					"linetotal": 10.000000000000
-				}
-			]
+		"Products": [{
+				"productcode": "ABC",
+				"description": "WALL PAINT",
+				"units": 1.00000000,
+				"unitvalue": 10.0000,
+				"countryofManufacture": "",
+				"unitkg": 1.00000000,
+				"imageurl": null,
+				"currency": "NZD",
+				"alreadySent": 0.00000000,
+				"fulfilledQty": 1.00000000,
+				"linetotal": 10.000000000000
+			}
+		]
         },
         {
             "packingslipno": "SSORDER13669",
@@ -202,20 +213,20 @@ An array orders:
                 "Delivered": "2016-02-26T08:11:14",
                 "manualticket": true
             },
-			"Products": [{
-					"productcode": "ABC",
-					"description": "WALL PAINT",
-					"units": 1.00000000,
-					"unitvalue": 10.0000,
-					"countryofManufacture": "",
-					"unitkg": 1.00000000,
-					"imageurl": null,
-					"currency": "NZD",
-					"alreadySent": 0.00000000,
-					"fulfilledQty": 1.00000000,
-					"linetotal": 10.000000000000
-				}
-			]
+		"Products": [{
+				"productcode": "ABC",
+				"description": "WALL PAINT",
+				"units": 1.00000000,
+				"unitvalue": 10.0000,
+				"countryofManufacture": "",
+				"unitkg": 1.00000000,
+				"imageurl": null,
+				"currency": "NZD",
+				"alreadySent": 0.00000000,
+				"fulfilledQty": 1.00000000,
+				"linetotal": 10.000000000000
+			}
+		]
         }
     ]
 }
