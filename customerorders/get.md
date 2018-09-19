@@ -121,7 +121,21 @@ An array orders:
                 "Picked": "2016-02-22T15:31:21",
                 "Delivered": "2016-02-23T12:46:45",
                 "manualticket": true
-            }
+            },
+			"Products": [{
+					"productcode": "ABC",
+					"description": "WALL PAINT",
+					"units": 1.00000000,
+					"unitvalue": 10.0000,
+					"countryofManufacture": "",
+					"unitkg": 1.00000000,
+					"imageurl": null,
+					"currency": "NZD",
+					"alreadySent": 0.00000000,
+					"fulfilledQty": 1.00000000,
+					"linetotal": 10.000000000000
+				}
+			]
         },
         {
             "packingslipno": "SSORDER13668",
@@ -147,7 +161,21 @@ An array orders:
                 "Picked": "2016-02-22T15:31:21",
                 "Delivered": "2016-02-24T08:42:22",
                 "manualticket": true
-            }
+            },
+			"Products": [{
+					"productcode": "ABC",
+					"description": "WALL PAINT",
+					"units": 1.00000000,
+					"unitvalue": 10.0000,
+					"countryofManufacture": "",
+					"unitkg": 1.00000000,
+					"imageurl": null,
+					"currency": "NZD",
+					"alreadySent": 0.00000000,
+					"fulfilledQty": 1.00000000,
+					"linetotal": 10.000000000000
+				}
+			]
         },
         {
             "packingslipno": "SSORDER13669",
@@ -173,7 +201,21 @@ An array orders:
                 "Picked": "2016-02-25T15:24:10",
                 "Delivered": "2016-02-26T08:11:14",
                 "manualticket": true
-            }
+            },
+			"Products": [{
+					"productcode": "ABC",
+					"description": "WALL PAINT",
+					"units": 1.00000000,
+					"unitvalue": 10.0000,
+					"countryofManufacture": "",
+					"unitkg": 1.00000000,
+					"imageurl": null,
+					"currency": "NZD",
+					"alreadySent": 0.00000000,
+					"fulfilledQty": 1.00000000,
+					"linetotal": 10.000000000000
+				}
+			]
         }
     ]
 }
