@@ -28,6 +28,7 @@ Gets the shipment labels in the requested format, png or pdf.
 + LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm
 + LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm
 + LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm
++ LABEL_PDF_LABELOPE - label is presented as a PDF Labelope. Rotation is not supported.
 + The 100x150 sizing is presently experimental and not available across all carriers.	
 
 ***
