@@ -38,10 +38,13 @@ Get the list of printers available to your user.
 
 ## Example
 **Request**
+
     https://api.gosweetspot.com/api/printers
 
-*Headers*
+**Headers**
+
     access_key: [access_key_for_site_account]
+    
     Content-Type: application/json; charset=utf-8
 
 **Return** __shortened for example purpose__
