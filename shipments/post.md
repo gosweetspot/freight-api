@@ -17,7 +17,7 @@ In this scenario, you need to call the [AvailableRates](https://github.com/goswe
 In this scenario, you won't know the cost of the freight for the shipment till after the shipment is created.  You will request the shipment to be used by specifying the carrier name, and service.
 
 
-**Printing-**  if the access_key has an associated printer setup, the print job is activated by default.  This can be turned off by specifying *PrintToPrinter=false*
+**Printing-**  if the access_key has an associated printer setup, the print job is activated by default.  This can be turned off by specifying *PrintToPrinter="false"*
 
 ***
 
@@ -44,7 +44,7 @@ When *QuoteId* is supplied, the *carrier* and *service* fields are ignored.  The
 - **ruraloverride** - true/false - ignore all rural delivery validation and surcharges
 - **deliveryreference** - string:50, order reference
 - **commodities** - JSON object array of customs declared commoditiy information. Only required for international shipments.
-- **printtoprinter** - true/false - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
+- **printtoprinter** - string, "true" would send a print request to your default printer. "false" indicates no printing is required. You can also put a [printer](https://github.com/gosweetspot/freight-api/blob/master/printers/get.md) name here and the print request would be sent directly to that printer.
 - **outputs** - optional -  JSON string array. Returns output of label as a PNG or PDF. Acceptable values:  
       LABEL_PDF - label is presented on an A4 page  
       LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm  
