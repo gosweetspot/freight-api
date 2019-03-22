@@ -18,7 +18,7 @@ Get the list of printers available to your user.
 - An array of objects, where each object represents a printer available to your user.
 
 ### Printer
-- **Printer** - string, Name of the print agent.
+- **Printer** - string, Name of the print agent. This name can be passed to the PrintToPrinter field when creating shipments to indicate this printer should be printed to.
 - **IsLabelPrinter** - bool
 - **IsOnline** - bool
 - **LabelType** - integer, represents a label type given in below table.
