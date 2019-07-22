@@ -71,7 +71,7 @@ Publish into the GSS queue your orders.
 
 ### Price Enquiry / Rates Query
 
-- **[<code>POST</code> api/rates](ratesquery/post.md)** Returns your available rates for the origin to destination specified.
+- **[<code>POST</code> api/rates](rates/post.md)** Returns your available rates for the origin to destination specified.
 
 ### Creating Shipments
 
