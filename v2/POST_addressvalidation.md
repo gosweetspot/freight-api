@@ -4,7 +4,7 @@
 
 ## Description
 Query to validation customer address details.
-For NZ addresses, the addresses are also validated for Rural Delivery.
+For NZ addresses, the addresses are also assessed for rural delivery, saturday delivery and residential delivery .
 
 ***
 
@@ -31,17 +31,22 @@ For NZ addresses, the addresses are also validated for Rural Delivery.
 - **postcode** - string:10, postal code
 - **countrycode** - string:2, ISO Alpha 2 country code, eg, NZ, AU, US, GB, CN, CA, etc.
 
+
+
 ## Return format
 A JSON object with validation response.
 
 - **validated** - true/false, result of state/suburb/postcode/country validation
-- **address** - address object as posted
+- **address** - address object as posted, with additional property AvailableServices
 - **errors** - list of validation messages
 
-***
-
-## Errors
-None
+*availableservice Object*
+- **carrier** - name of carrier
+- **isresidential** - indicates if this is a residential service
+- **isrural** - indicates if this is a rural service
+- **hassaturdayservice** - indicates if saturday delivery is a possible service
+- **branchcode** - the branch code of the branch serving this address
+- **runnumber** - run number
 
 ***
 
@@ -62,46 +67,103 @@ None
 {
 	"Consignee": "0123456789 0123456789 0123456789 0123456789",
 	"Address": {
-		"BuildingName": null,
+		"BuildingName": "",
 		"StreetAddress": "1 Some Street",
 		"Suburb": "MascotX",
 		"City": "NSW",
 		"PostCode": "2020",
-		"CountryCode": "Au"
+		"CountryCode": "AU",
+		"IsRural": false
 	},
-	"Email": null,
-	"ContactPerson": null,
-	"PhoneNumber": null,
-	"IsRural": false,
-	"DeliveryInstructions": null
+	"Email": "",
+	"ContactPerson": "",
+	"PhoneNumber": "",
+	"DeliveryInstructions": "",
+	"AvailableServices": []
 }
 ```
 
 
 **Response** 
+
+Invalid address example
 ``` json
 {
 	"Address": {
 		"Consignee": "0123456789 0123456789 0123456789 0123456789",
 		"Address": {
-			"BuildingName": null,
+			"BuildingName": "",
 			"StreetAddress": "1 Some Street",
 			"Suburb": "MascotX",
 			"City": "NSW",
 			"PostCode": "2020",
-			"CountryCode": "Au",
-			"IsRural": false
+			"CountryCode": "AU",
+			"IsRural": false,
+			"IsResidential": false
 		},
-		"Email": null,
-		"ContactPerson": null,
-		"PhoneNumber": null,
-		"DeliveryInstructions": null
+		"Email": "",
+		"ContactPerson": "",
+		"PhoneNumber": "",
+		"DeliveryInstructions": "",
+		"AvailableServices": []
 	},
 	"Validated": false,
-	"Errors": [
-		"Suburb/City-State/Postcode invalid"
-	]
+	"Errors": ["Suburb/City-State/Postcode invalid"]
+}
+
+```
+Valid address example
+
+```
+{
+	"Address": {
+		"Consignee": "0123456789 0123456789 0123456789 0123456789",
+		"Address": {
+			"BuildingName": "",
+			"StreetAddress": "1 Chesham Lane",
+			"Suburb": "Clevedon",
+			"City": "Auckland",
+			"PostCode": "2248",
+			"CountryCode": "NZ",
+			"IsRural": false,
+			"IsResidential": false
+		},
+		"Email": "",
+		"ContactPerson": "",
+		"PhoneNumber": "",
+		"DeliveryInstructions": "",
+		"AvailableServices": [{
+				"Carrier": "NZCouriers",
+				"IsResidential": true,
+				"IsRural": true,
+				"HasSaturdayService": false,
+				"BranchCode": "MKC",
+				"RunNumber": ""
+			}, {
+				"Carrier": "PostHaste",
+				"IsResidential": true,
+				"IsRural": true,
+				"HasSaturdayService": false,
+				"BranchCode": "AKL",
+				"RunNumber": ""
+			}, {
+				"Carrier": "CastleParcel",
+				"IsResidential": true,
+				"IsRural": true,
+				"HasSaturdayService": false,
+				"BranchCode": "AKL",
+				"RunNumber": ""
+			}, {
+				"Carrier": "NOWCouriers",
+				"IsResidential": true,
+				"IsRural": true,
+				"HasSaturdayService": false,
+				"BranchCode": "AKL",
+				"RunNumber": ""
+			}
+		]
+	},
+	"Validated": true,
+	"Errors": []
 }
 ```
-
-
