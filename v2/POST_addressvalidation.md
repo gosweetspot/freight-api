@@ -79,6 +79,8 @@ None
 
 
 **Response** 
+
+Invalid address example
 ``` json
 {
 	"Address": {
@@ -103,5 +105,58 @@ None
 	]
 }
 ```
+Valid address example
 
-
+```
+{
+	"Address": {
+		"Consignee": "0123456789 0123456789 0123456789 0123456789",
+		"Address": {
+			"BuildingName": "",
+			"StreetAddress": "1 Chesham Lane",
+			"Suburb": "Clevedon",
+			"City": "Auckland",
+			"PostCode": "2248",
+			"CountryCode": "NZ",
+			"IsRural": false,
+			"IsResidential": false
+		},
+		"Email": "",
+		"ContactPerson": "",
+		"PhoneNumber": "",
+		"DeliveryInstructions": "",
+		"AvailableServices": [{
+				"Carrier": "NZCouriers",
+				"IsResidential": true,
+				"IsRural": true,
+				"HasSaturdayService": false,
+				"BranchCode": "MKC",
+				"RunNumber": ""
+			}, {
+				"Carrier": "PostHaste",
+				"IsResidential": true,
+				"IsRural": true,
+				"HasSaturdayService": false,
+				"BranchCode": "AKL",
+				"RunNumber": ""
+			}, {
+				"Carrier": "CastleParcel",
+				"IsResidential": true,
+				"IsRural": true,
+				"HasSaturdayService": false,
+				"BranchCode": "AKL",
+				"RunNumber": ""
+			}, {
+				"Carrier": "NOWCouriers",
+				"IsResidential": true,
+				"IsRural": true,
+				"HasSaturdayService": false,
+				"BranchCode": "AKL",
+				"RunNumber": ""
+			}
+		]
+	},
+	"Validated": true,
+	"Errors": []
+}
+```
