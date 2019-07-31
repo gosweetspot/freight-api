@@ -127,6 +127,7 @@ A JSON object with the created shipment details.
 - **carriertype** - internal carrier classification
 - **issaturdaydelivery** - true/false - whether saturday delivery service was applied
 - **isrural** - true/false - whether delivery identified as rural
+- **isresidential** - true/false - whether delivery identified as residential
 - **isovernight** - true/false - whether service is overnight where delivery is inter island
 - **hastrackpaks** - true/false - whether this shipment has any trackpaks on it
 - **outputs** - JSON object byte array with requested output file as Base64 encoded string
@@ -199,6 +200,7 @@ This is a simple outbound, or sending out from your site, shipment.
     "CarrierName": "Post Haste",
     "IsFreightForward": false,
     "IsOvernight": false,
+    "IsResidential": true,
     "IsSaturdayDelivery": false,
     "IsRural": false,
     "HasTrackPaks": false,
@@ -216,6 +218,7 @@ This is a simple outbound, or sending out from your site, shipment.
             "IsSaturdayDelivery": false,
             "IsRural": false,
             "IsOvernight": false,
+            "IsResidential": true,
             "HasTrackPaks": false,
             "ConsignmentId": 6215942,
             "OutputFiles": null,
@@ -324,6 +327,7 @@ In the case that you want to suppress the automatic email you can provide an add
     "CarrierName": "Post Haste",
     "IsFreightForward": true,
     "IsOvernight": false,
+    "IsResidential": false,
     "IsSaturdayDelivery": false,
     "IsRural": false,
     "HasTrackPaks": false,
@@ -341,6 +345,7 @@ In the case that you want to suppress the automatic email you can provide an add
             "IsSaturdayDelivery": false,
             "IsRural": false,
             "IsOvernight": false,
+            "IsResidential": false,
             "HasTrackPaks": false,
             "ConsignmentId": 6215943,
             "OutputFiles": null,
@@ -460,6 +465,7 @@ This is the same as a standard outbound, with the additional details of the DG. 
     "CarrierName": "Post Haste",
     "IsFreightForward": false,
     "IsOvernight": false,
+    "IsResidential": true,
     "IsSaturdayDelivery": false,
     "IsRural": false,
     "HasTrackPaks": false,
@@ -477,6 +483,7 @@ This is the same as a standard outbound, with the additional details of the DG. 
             "IsSaturdayDelivery": false,
             "IsRural": false,
             "IsOvernight": false,
+             "IsResidential": true,
             "HasTrackPaks": false,
             "ConsignmentId": 6215944,
             "OutputFiles": {
@@ -584,6 +591,7 @@ Sending overseas. These shipment require addtional details for goods description
     "CarrierName": "FedEx",
     "IsFreightForward": false,
     "IsOvernight": false,
+    "IsResidential": false,
     "IsSaturdayDelivery": false,
     "IsRural": false,
     "HasTrackPaks": false,
@@ -601,6 +609,7 @@ Sending overseas. These shipment require addtional details for goods description
             "IsSaturdayDelivery": false,
             "IsRural": false,
             "IsOvernight": false,
+            "IsResidential": false,
             "HasTrackPaks": false,
             "ConsignmentId": 6215945,
             "OutputFiles": null,
@@ -706,6 +715,7 @@ Note: When a *QuoteId* is not provided, the *Carrier* and *Service* properties a
     "CarrierName": "FedEx",
     "IsFreightForward": false,
     "IsOvernight": false,
+    "IsResidential": false,
     "IsSaturdayDelivery": false,
     "IsRural": false,
     "HasTrackPaks": false,
@@ -723,6 +733,7 @@ Note: When a *QuoteId* is not provided, the *Carrier* and *Service* properties a
             "IsSaturdayDelivery": false,
             "IsRural": false,
             "IsOvernight": false,
+            "IsResidential": false,
             "HasTrackPaks": false,
             "ConsignmentId": 6215945,
             "OutputFiles": null,

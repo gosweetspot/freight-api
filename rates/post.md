@@ -66,6 +66,7 @@ The *Hidden* rates, are available rates, but have been filtered out due to user 
 - **isruraldelivery** - if delivery has been identified as a rural aread delivery
 - **issaturdaydelivery** - if delivery has been flagged for saturday delivery
 - **isfreightforward** - if pickup is originating from an address other then the site address
+- **isresidential** - if delivery has been flagged for a residential delivery
 - **carrierservicetype** - carrier provider service type
 
 **Rejected**
@@ -120,6 +121,7 @@ If there are any validation errors these are reported via the *ValidationErrors*
   },
   "IsSaturdayDelivery": false,
   "IsSignatureRequired": true,
+  "IsResidentialDelivery": true,
   "Packages": [
     {
       "Height": 1,
