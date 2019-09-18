@@ -109,6 +109,180 @@ Get status updates for shipments
                                     <td>track and trace url for live tracking of the order</td>
                                 </tr>
                                 <tr>
+                                    <td>OriginZone
+                                    </td>
+                                    <td>string</td>
+                                    <td>Short code for the origin zone of the consignment.</td>
+                                </tr>
+                                <tr>
+                                    <td>DestinationZone</td>
+                                    <td>string</td>
+                                    <td>Short code for the destination zone of the consignment.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CostCentre
+                                    </td>
+                                    <td>
+                                        string
+                                    </td>
+                                    <td>Name of the associated cost centre.</td>
+                                </tr>
+                                <tr>
+                                    <td>Carrier</td>
+                                    <td>string</td>
+                                    <td>Carrier name.</td>
+                                </tr>
+                                <tr>
+                                    <td>DeliveryInstructions</td>
+                                    <td>string</td>
+                                    <td>Instructions for delivery driver.</td>
+                                </tr>
+                                <tr>
+                                    <td>IsSaturdayDelivery</td>
+                                    <td>bool</td>
+                                    <td>If delivery will be attempted on Saturday, when applicable.</td>
+                                </tr>
+                                <tr>
+                                    <td>IsRuralDelivery</td>
+                                    <td>bool</td>
+                                    <td>If the destination has been determined to be rural.</td>
+                                </tr>
+                                <tr>
+                                    <td>IsPOBox</td>
+                                    <td>bool</td>
+                                    <td>If the destination has been determined to be a PO Box, ParcelPod, etc.</td>
+                                </tr>
+                                <tr>
+                                    <td>CustomerReference</td>
+                                    <td>string</td>
+                                    <td>Reference number.</td>
+                                </tr>
+                                <tr>
+                                    <td>TotalCubic</td>
+                                    <td>decimal</td>
+                                    <td>Sum of cubic volume of all items in this consignment. Denoted in m3.</td>
+                                </tr>
+                                <tr>
+                                    <td>TotalKg</td>
+                                    <td>decimal</td>
+                                    <td>Sum of weight of all items in this consignment. Denoted in kg.</td>
+                                </tr>
+                                <tr>
+                                    <td>Parts</td>
+                                    <td>int</td>
+                                    <td>Number of items in this consignment.</td>
+                                </tr>
+                                <tr>
+                                    <td>IsSignatureRequired</td>
+                                    <td>bool</td>
+                                    <td>True if the delivery driver needs to collect a signature.</td>
+                                </tr>
+                                <tr>
+                                    <td>IsFreightForward</td>
+                                    <td>bool</td>
+                                    <td>True if this is a freight-forward consignment.</td>
+                                </tr>
+                                <tr>
+                                    <td>Parts</td>
+                                    <td>int</td>
+                                    <td>Number of items in this consignment.</td>
+                                </tr>
+                                <tr>
+                                    <td>Origin</td>
+                                    <td>Struct</td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td>Building</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Suburb</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Town</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>PostalCode</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Country</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ContactName</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ContactPhone</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>string</td>
+                                            </tr>
+                                        </table>
+                                </tr>
+                                <tr>
+                                    <td>Destination</td>
+                                    <td>Struct</td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td>Building</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Suburb</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Town</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>PostalCode</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Country</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ContactName</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ContactPhone</td>
+                                                <td>string</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>string</td>
+                                            </tr>
+                                        </table>
+                                </tr>
+                                <tr>
                                     <td>Events</td>
                                     <td>return[] <br />struct</td>
                                     <td>
