@@ -282,6 +282,63 @@ Get status updates for shipments
                                             </tr>
                                         </table>
                                 </tr>
+				    <tr>
+                                    <td>Items</td>
+                                    <td>Struct</td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td>PartNo</td>
+                                                <td>int</td>
+						<td>The part number of the consignment - e.g. 1, 2 , 3 etc.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>LengthCm</td>
+                                                <td>decimal</td>
+						<td> </td>
+                                            </tr>
+                                            <tr>
+                                                <td>WidthCm</td>
+                                                <td>decimal</td>
+						<td> </td>
+                                            </tr>
+                                            <tr>
+                                                <td>HeightCm</td>
+                                                <td>decimal</td>
+						<td> </td>
+                                            </tr>
+                                            <tr>
+                                                <td>WeightKg</td>
+                                                <td>decimal</td>
+						<td> </td>
+                                            </tr>
+                                            <tr>
+                                                <td>PackageName</td>
+                                                <td>string</td>
+						<td>Name of the package - e.g. GSS A4 Satchel.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Charge_LineTotal</td>
+                                                <td>decimal</td>
+						<td>Total charge determined for this item at the time of consignment creation.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>PickedAt</td>
+                                                <td>Nullable DateTime</td>
+						<td>Date and time this item was picked up - will be null if not yet picked up.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DeliveredAt</td>
+                                                <td>Nullable DateTime</td>
+						<td>Date and time this item was delivered - will be null if not yet delivered.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RatingCode</td>
+                                                <td>string</td>
+						<td>The rating code of this item.</td>
+                                            </tr>
+                                        </table>
+                                </tr>
                                 <tr>
                                     <td>Events</td>
                                     <td>return[] <br />struct</td>
