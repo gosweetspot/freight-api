@@ -404,137 +404,176 @@ Get status updates for shipments
 **Return** __shortened for example purpose__
 ``` json
 {
-	"Page": 1,
-	"PageSize": 3,
-	"Pages": 1,
-	"Results": [
-		{
-			"ConsignmentNo": "SSPOT015389",
-			"Status": "Delivered to ANDREW",
-			"Picked": "2015-05-29T15:37:45",
-			"Delivered": "2015-06-02T10:23:20",
-			"Tracking": "http://gosweetspot.com/track/4180-SSPOT015389",
-			"Events": [
-				{
-					"EventDT": "2015-05-29T14:34:32.927",
-					"Code": "CR",
-					"Description": "Tracking number allocated & order ready",
-					"Location": "AUCKLAND",
-					"Part": "SSPOT01538901"
-				},
-				{
-					"EventDT": "2015-05-29T15:37:45",
-					"Code": "COUR",
-					"Description": "Picked up",
-					"Location": "PENROSE (AKL)",
-					"Part": "SSPOT01538901"
-				},
-				{
-					"EventDT": "2015-06-02T08:46:32",
-					"Code": "COURU",
-					"Description": "On courier vehicle for delivery",
-					"Location": "Glenfield Industrial Wairau Valley (AKL)",
-					"Part": "SSPOT01538901"
-				},
-				{
-					"EventDT": "2015-06-02T10:23:20",
-					"Code": "DEL",
-					"Description": "Delivered to ANDREW",
-					"Location": "Glenfield Industrial Wairau Valley (AKL)",
-					"Part": "SSPOT01538901"
-				}
-			],
-			"TotalCost": 8.90,
-			"CreatedUtc": "2015-05-30T02:34:32.927",
-			"PackingSlipNo": "SSORDER10133",
-			"ManualTicket": false,
-			"Consignee": "BOB SMITH LTD"
-		},
-		{
-			"ConsignmentNo": "SSPOT015387",
-			"Status": "Delivered to FRONT DOOR",
-			"Picked": "2015-05-29T15:37:45",
-			"Delivered": "2015-06-02T06:27:13",
-			"Tracking": "http://gosweetspot.com/track/4180-SSPOT015387",
-			"Events": [
-				{
-					"EventDT": "2015-05-29T14:33:46.46",
-					"Code": "CR",
-					"Description": "Tracking number allocated & order ready",
-					"Location": "AUCKLAND",
-					"Part": "SSPOT01538701"
-				},
-				{
-					"EventDT": "2015-05-29T15:37:45",
-					"Code": "COUR",
-					"Description": "Picked up",
-					"Location": "PENROSE (AKL)",
-					"Part": "SSPOT01538701"
-				},
-				{
-					"EventDT": "2015-06-02T05:40:41",
-					"Code": "COURU",
-					"Description": "On courier vehicle for delivery",
-					"Location": "KELSTON/GLEN EDEN/GLENDENE/HENDERSON (AKL)",
-					"Part": "SSPOT01538701"
-				},
-				{
-					"EventDT": "2015-06-02T06:27:13",
-					"Code": "DEL",
-					"Description": "Delivered to FRONT DOOR",
-					"Location": "KELSTON/GLEN EDEN/GLENDENE/HENDERSON (AKL)",
-					"Part": "SSPOT01538701"
-				}
-			],
-			"TotalCost": 8.95,
-			"CreatedUtc": "2015-05-30T02:33:46.46",
-			"PackingSlipNo": "SSORDER10135",
-			"ManualTicket": false,
-			"Consignee": "TOM HARDY LIMITED"
-		},
-		{
-			"ConsignmentNo": "SSPOT015392",
-			"Status": "Delivered to 25 HARKNESS",
-			"Picked": "2015-06-04T16:08:39",
-			"Delivered": "2015-06-05T08:07:00",
-			"Tracking": "http://gosweetspot.com/track/4180-SSPOT015392",
-			"Events": [
-				{
-					"EventDT": "2015-06-02T11:57:21.63",
-					"Code": "CR",
-					"Description": "Tracking number allocated & order ready",
-					"Location": "AUCKLAND",
-					"Part": "SSPOT01539201"
-				},
-				{
-					"EventDT": "2015-06-04T16:08:39",
-					"Code": "COUR",
-					"Description": "Picked up",
-					"Location": "PENROSE (AKL)",
-					"Part": "SSPOT01539201"
-				},
-				{
-					"EventDT": "2015-06-05T06:57:55",
-					"Code": "COURU",
-					"Description": "On courier vehicle for delivery",
-					"Location": "AVONHEAD/ILAM/UPPER RICCARTON (CHC)",
-					"Part": "SSPOT01539201"
-				},
-				{
-					"EventDT": "2015-06-05T08:07:23",
-					"Code": "DEL",
-					"Description": "Delivered to 25 HARKNESS",
-					"Location": "AVONHEAD/ILAM/UPPER RICCARTON (CHC)",
-					"Part": "SSPOT01539201"
-				}
-			],
-			"TotalCost": 17.56,
-			"CreatedUtc": "2015-06-02T23:57:21.63",
-			"PackingSlipNo": "SSORDER10154",
-			"ManualTicket": false,
-			"Consignee": "THE FOX SHED"
-		}
-	]
+  "Page": 1,
+  "PageSize": 2,
+  "Pages": 1,
+  "Results": [
+    {
+      "OriginZone": "AKLW",
+      "DestinationZone": "AKL",
+      "Origin": {
+        "Building": "**** TEST ********* TEST *****",
+        "Address": "**** TEST ********* TEST *****",
+        "Name": "TEST ACCOUNT",
+        "Suburb": "MT ROSKILL",
+        "Town": "AUCKLAND",
+        "PostalCode": "0600",
+        "Country": "NZ",
+        "ContactName": "TEST",
+        "ContactPhone": "123456",
+        "Email": ""
+      },
+      "Destination": {
+        "Building": "GOSWEETSPOT",
+        "Address": "102 STATION ROAD EAST",
+        "Name": "DON ZHANG",
+        "Suburb": "PENROSE",
+        "Town": "AUCKLAND",
+        "PostalCode": "1061",
+        "Country": "NZ",
+        "ContactName": "RECEIVER NAME",
+        "ContactPhone": "212563080",
+        "Email": ""
+      },
+      "CostCentre": "TEST COST CENTRE ONE",
+      "Carrier": "Post Haste - AKL - 2011",
+      "DeliveryInstructions": "",
+      "IsSaturdayDelivery": false,
+      "IsRuralDelivery": false,
+      "IsPOBox": false,
+      "CustomerRef": "#1029",
+      "TotalCubic": 0.022,
+      "TotalKg": 5.5,
+      "Parts": 1,
+      "IsSignatureRequired": true,
+      "IsFreightForward": false,
+      "ManifestedAt": null,
+      "Items": [
+        {
+          "PartNo": 1,
+          "LengthCm": 47,
+          "WidthCm": 47,
+          "HeightCm": 10,
+          "WeightKg": 5.5,
+          "PackageName": "SMALL BOX",
+          "Charge_LineTotal": 9.98,
+          "PickedAt": null,
+          "DeliveredAt": null,
+          "RatingCode": "MS"
+        }
+      ],
+      "ConsignmentNo": "APD00020626",
+      "Status": null,
+      "Picked": null,
+      "Delivered": null,
+      "Tracking": "https:\/\/gosweetspot.com\/track\/108633-APD00020626",
+      "Events": [
+      	{
+      		"EventDT": "2019-10-10T22:57:57.047",
+      		"Code": "CR",
+      		"Description": "Tracking number allocated & order ready",
+      		"Location": "AUCKLAND",
+      		"Part": "APD0002062601"
+      	},
+      	{
+      		"EventDT": "2019-10-10T22:57:57.047",
+      		"Code": "COUR",
+      		"Description": "Picked up",
+      		"Location": "PENROSE (AKL)",
+      		"Part": "APD0002062601"
+      	},
+      	{
+      		"EventDT": "2019-10-10T22:57:57.047",
+      		"Code": "COURU",
+      		"Description": "On courier vehicle for delivery",
+      		"Location": "Glenfield Industrial Wairau Valley (AKL)",
+      		"Part": "APD0002062601"
+      	},
+      	{
+      		"EventDT": "2019-10-10T22:57:57.047",
+      		"Code": "DEL",
+      		"Description": "Delivered to ANDREW",
+      		"Location": "Glenfield Industrial Wairau Valley (AKL)",
+      		"Part": "APD0002062601"
+      	}
+      ],
+      "ManifestNumber": "ABCD",
+      "TotalCost": 9.98,
+      "CreatedUtc": "2019-10-10T22:57:57.047",
+      "PackingSlipNo": "#1029",
+      "ManualTicket": false,
+      "Consignee": "RECEIVER NAME"
+    },
+    {
+      "OriginZone": "AKLW",
+      "DestinationZone": "AKL",
+      "Origin": {
+        "Building": "**** TEST ********* TEST *****",
+        "Address": "**** TEST ********* TEST *****",
+        "Name": "TEST ACCOUNT",
+        "Suburb": "MT ROSKILL",
+        "Town": "AUCKLAND",
+        "PostalCode": "0600",
+        "Country": "NZ",
+        "ContactName": "TEST",
+        "ContactPhone": "123456",
+        "Email": ""
+      },
+      "Destination": {
+        "Building": "GOSWEETSPOT",
+        "Address": "101 STATION ROAD EAST",
+        "Name": "RECEIVER NAME",
+        "Suburb": "PENROSE",
+        "Town": "AUCKLAND",
+        "PostalCode": "1061",
+        "Country": "NZ",
+        "ContactName": "RECEIVER NAME",
+        "ContactPhone": "212563080",
+        "Email": ""
+      },
+      "CostCentre": "TEST COST CENTRE ONE",
+      "Carrier": "Post Haste - AKL - 2011",
+      "DeliveryInstructions": "",
+      "IsSaturdayDelivery": false,
+      "IsRuralDelivery": false,
+      "IsPOBox": false,
+      "CustomerRef": "#1031",
+      "TotalCubic": 0.022,
+      "TotalKg": 5.5,
+      "Parts": 1,
+      "IsSignatureRequired": true,
+      "IsFreightForward": false,
+      "ManifestedAt": null,
+      "Items": [
+        {
+          "PartNo": 1,
+          "LengthCm": 47,
+          "WidthCm": 47,
+          "HeightCm": 10,
+          "WeightKg": 5.5,
+          "PackageName": "SMALL BOX",
+          "Charge_LineTotal": 9.98,
+          "PickedAt": null,
+          "DeliveredAt": null,
+          "RatingCode": "MS"
+        }
+      ],
+      "ConsignmentNo": "APD00020627",
+      "Status": null,
+      "Picked": null,
+      "Delivered": null,
+      "Tracking": "https:\/\/gosweetspot.com\/track\/108633-APD00020627",
+      "Events": [
+        
+      ],
+      "ManifestNumber": "ABCD",
+      "TotalCost": 9.98,
+      "CreatedUtc": "2019-10-10T23:30:53.88",
+      "PackingSlipNo": "#1031",
+      "ManualTicket": false,
+      "Consignee": "RECEIVER NAME"
+    }
+  ]
 }
 
 ```
