@@ -34,6 +34,7 @@ The body of the message should be sent as an JSON array.
 - **rawaddress** - full, unvalidated address body for display purposes only. Use \n for newline in this field. Optional.
 - **costcentre** - Put the exact name of a cost centre here and the cost centre will be pre-selected when fulfilling the order. Optional.
 - **products** - optional, JSON object of product descriptions
+- **iconUrl** - optional, custom icon Url link.
 
 ** products ** json object
 - **productcode** - string:20, your unique product code for the good.
@@ -88,6 +89,7 @@ None
     "contactname": null,
     "contactphone": null,
     "email": null,
+    "iconUrl": null,
     "Products": [{
         "productcode": "ABC",
         "Description": "Wall Paint",
