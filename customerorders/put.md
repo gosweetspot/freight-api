@@ -33,7 +33,8 @@ The body of the message should be sent as an JSON array.
 - **email** - email address for track & trace email, optional.
 - **rawaddress** - full, unvalidated address body for display purposes only. Use \n for newline in this field. Optional.
 - **costcentre** - Put the exact name of a cost centre here and the cost centre will be pre-selected when fulfilling the order. Optional.
-- **products** - optional, JSON object of product descriptions
+- **products** - optional, JSON array of product descriptions.
+- **packages** - optional, JSON array of packages that will be sent on this order.
 - **iconUrl** - optional, custom icon Url link.
 
 ** products ** json object
@@ -46,6 +47,8 @@ The body of the message should be sent as an JSON array.
 - **imageurl** - string:500, product image url if available. Should be an open/public url.
 - **currency** - string:3, currency code for value, eg NZD, AUD, USD
 - **alreadySent** - decimal, units of product that have already been sent prior to this shipment. This should be less than the "units" provided.
+
+** packages ** json object
 
 
 ***
