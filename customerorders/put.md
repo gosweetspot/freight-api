@@ -34,9 +34,10 @@ The body of the message should be sent as an JSON array.
 - **rawaddress** - full, unvalidated address body for display purposes only. Use \n for newline in this field. Optional.
 - **costcentre** - Put the exact name of a cost centre here and the cost centre will be pre-selected when fulfilling the order. Optional.
 - **products** - optional, JSON object of product descriptions
+- **packages** - optional, JSON object of packages on order. Currently not supported for SpeedPrint workflow.
 - **iconUrl** - optional, custom icon Url link.
 
-** products ** json object
+### products json object
 - **productcode** - string:20, your unique product code for the good.
 - **description** - string:20, goods description of the product
 - **units** - decimal, number of units of product
@@ -46,6 +47,14 @@ The body of the message should be sent as an JSON array.
 - **imageurl** - string:500, product image url if available. Should be an open/public url.
 - **currency** - string:3, currency code for value, eg NZD, AUD, USD
 - **alreadySent** - decimal, units of product that have already been sent prior to this shipment. This should be less than the "units" provided.
+
+### packages json object
+- **PackageStockName** specify the name of the package here, e.g. GSS-A5 Satchel. The package needs to be previously configured [here](https://ship.gosweetspot.com/stocksizes) with length/width/height parameters.
+- **Quantity** - required int.
+- **WeightKg** - optional float. If this is not present, will use the default weight of the package.
+- **LengthCm** - optional float. This parameter will be ignored if the package is a SATCHEL type.
+- **WidthCm** - optional float. This parameter will be ignored if the package is a SATCHEL type.
+- **HeightCm** - optional float. This parameter can be edited even if the package is a SATCHEL type.
 
 
 ***
