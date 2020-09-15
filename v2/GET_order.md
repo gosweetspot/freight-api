@@ -27,6 +27,11 @@ A JSON object with order status:
 - **trackingurl** - track and trace website url
 - **picked** - localised to pickup timezone, pickup time stamp. *null* if not picked yet
 - **delivered** - localised to destintation timezone, delivery time stamp. *null* if not delivered yet
+- **ticketprinteddate** - localised to origin timezone, when the shipment ticket was created
+- **ticketprintedby** - username of the user, creating the ticket
+- **ticketdeleteddate** - localised to NZ timezone, date and time when the ticket was deeted, if deleted. *null* if not deleted
+- **ticketdeletedby** - username of the user, deleting the ticket
+
 
 ***
 
@@ -48,11 +53,15 @@ A JSON object with order status:
 {
   "packingslipno": "SSORDER5840",
   "consignee": "PHOTO DREAMS LIMITED",
-  "Status": "DELIVERED",
+  "status": "DELIVERED",
   "ticketnumber": "SSPOT012671",
   "trackingurl": "http://gosweetspot.com/track/4180-SSPOT012671",
-  "Picked": "2014-06-03T08:40:00",
-  "Delivered": "2014-06-03T14:46:45"
+  "picked": "2014-06-03T08:40:00",
+  "delivered": "2014-06-03T14:46:45",
+  "ticketprinteddate": "2014-06-03T08:30:00",
+  "ticketprintedby": "abc@accompany.co.nz",
+  "ticketdeleteddate": null,
+  "ticketdeletedby": null
 }
 ```
 
