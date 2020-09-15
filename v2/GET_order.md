@@ -27,7 +27,7 @@ A JSON object with order status:
 - **trackingurl** - track and trace website url
 - **picked** - localised to pickup timezone, pickup time stamp. *null* if not picked yet
 - **delivered** - localised to destintation timezone, delivery time stamp. *null* if not delivered yet
-- **ticketprinteddate** - localised to origin timezone, when the shipment ticket was created
+- **ticketprinteddate** - localised to origin timezone, when the shipment ticket was created. *null* if not created yet
 - **ticketprintedby** - username of the user, creating the ticket
 - **ticketdeleteddate** - localised to NZ timezone, date and time when the ticket was deeted, if deleted. *null* if not deleted
 - **ticketdeletedby** - username of the user, deleting the ticket
