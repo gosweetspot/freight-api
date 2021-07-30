@@ -112,7 +112,9 @@ This is provided to help you develop/debug your code.
 ## FAQ
 
 ### How do I connect to the API?
-The API is only available to authenticated clients. Clients should authenticate users using [access_key]. Once authenticated, you need to request a resource from one of the endpoints using HTTP. Generally, reading any data is done through a request with GET method.
+The API is only available to authenticated clients. Clients should authenticate users using an access_key obtained from the Preferences & Settings screen. Once authenticated, you need to request a resource from one of the endpoints using HTTP. Generally, reading any data is done through a request with GET method. 
+
+If the user with the access_key has access to multiple sites in the account, a `site_id` HTTP header with the site id is also required, e.g. `site_id: 123456`.
 
 ### What return formats do you support?
 Freight API currently returns data in [JSON](http:/json.org/ "JSON") format.  Some methods may return [XML] data, however we don't actively test for XML compatibility.
@@ -120,7 +122,9 @@ Freight API currently returns data in [JSON](http:/json.org/ "JSON") format.  So
 ### What kind of authentication is required?
 Applications must identify themselves to access any resource.
 You need to contact your account manager to obtain a test access key.
-Every request requires a http header property ACCESS_KEY, as well as SUPPORT_EMAIL. The Support Email should contain the IT Level contact for the organisation. This will be used to contacting you, should we find your requests need attention.
+Every request requires a http header property `access_key`, as well as `support_email`. The Support Email should contain the IT Level contact for the organisation. This will be used to contacting you, should we find your requests need attention.
+
+If the user with the access_key has access to multiple sites in the account, a `site_id` HTTP header with the site id is also required.
 
 ### Is there a request rate limit?
 Presently there is no rate limiting on the api. We however reserve the right to enforce limits or block calls at our discretion.  We request that you limit your requests to 60 calls per minute. If you expect to call at a higher rates, please contact us.

@@ -8,7 +8,8 @@ Saves a new order or updates a pending order. If the packing slip number has alr
 ***
 
 ## Requires authentication
-* A valid access Key must be provided in **access_key** request header.
+* A valid access key must be provided in `access_key` request header.
+* If the user with the access_key has access to multiple sites in the account, a `site_id` HTTP header with the site id is also required.
 
 ***
 
