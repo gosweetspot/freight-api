@@ -9,8 +9,8 @@ Query for all available carriers and services for this account.
 ***
 
 ## Requires authentication
-* A valid access Key must be provided in **access_key** request header.
-
+* A valid access key must be provided in `access_key` request header.
+* If the user with the access_key has access to multiple sites in the account, a `site_id` HTTP header with the site id is also required.
 ***
 
 ## Parameters

@@ -8,7 +8,8 @@ Queues the provided image file for printing via the print agent.
 ***
 
 ## Requires authentication
-* A valid access Key must be provided in **access_key** request header.
+* A valid access key must be provided in `access_key` request header.
+* If the user with the access_key has access to multiple sites in the account, a `site_id` HTTP header with the site id is also required.
 
 ***
 
