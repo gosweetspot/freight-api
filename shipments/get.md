@@ -361,6 +361,7 @@ Get status updates for shipments
                                                         <li>PUP - Picked up from sender</li>
                                                         <li>UPD - Courier status update provided</li>
                                                         <li>EXP - delivery exception, or service update</li>
+							<li>DEL - Delivery completed</li>
                                                     </ul>
                                                 </td>
                                             </tr>
