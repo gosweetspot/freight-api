@@ -31,6 +31,8 @@ Upon creating the shipment, the print command can also be automatically initiate
       LABEL_PNG_100X150 - label is presented as a PNG image with dimension 100mm x 150mm  
       LABEL_PDF_100X175 - label is presented as a PDF with dimension 100mm x 175mm  
       LABEL_PDF_100X150 - label is presented as a PDF with dimension 100mm x 150mm  
+      USER_CONFIGURED - label is presented as a PDF when [User's Printing Setting](https://ship.gosweetspot.com/settings) is PDF file, or a PRN file is presented if [User's Printing Setting](https://ship.gosweetspot.com/settings) is GoPrint - PRN Download
+      GOPRINT_PRN - PRN file is presented
 
       The 100x150 sizing is presently experimental and not available across all carriers.  
 
