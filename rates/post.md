@@ -91,7 +91,7 @@ If there are any validation errors these are reported via the *ValidationErrors*
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/api/rates
+    https://api.gosweetspot.com/api/rates
 
 *Headers*
 

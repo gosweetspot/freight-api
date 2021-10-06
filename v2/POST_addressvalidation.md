@@ -54,7 +54,7 @@ A JSON object with validation response.
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/v2/addressvalidation
+    https://api.gosweetspot.com/v2/addressvalidation
 
 *Headers*
 

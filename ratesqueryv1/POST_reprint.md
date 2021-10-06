@@ -32,7 +32,7 @@ Error messages will range in the below
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/reprint?consignmentno=ABC123
+    https://api.gosweetspot.com/ratesqueryv1/reprint?consignmentno=ABC123
 
 *Headers*
 

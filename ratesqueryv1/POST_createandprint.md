@@ -104,7 +104,7 @@ A JSON object with the created shipment details.
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/createandprint
+    https://api.gosweetspot.com/ratesqueryv1/createandprint
 
 *Headers*
 

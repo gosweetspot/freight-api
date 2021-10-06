@@ -73,7 +73,7 @@ None
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/api/customerorders
+    https://api.gosweetspot.com/api/customerorders
 
 *Headers*
 
