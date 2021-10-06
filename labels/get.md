@@ -44,7 +44,7 @@ In the case of PDF, all parts are returned on a single multi page pdf.
 ## Example
 **Request**
 
-    GET http://api.gosweetspot.com/api/labels?format=label_png&connote=ABA0010054
+    GET https://api.gosweetspot.com/api/labels?format=label_png&connote=ABA0010054
 
 *Headers*
 

@@ -43,7 +43,7 @@ None
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/v2/neworder
+    https://api.gosweetspot.com/v2/neworder
 
 *Headers*
 

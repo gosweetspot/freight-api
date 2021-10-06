@@ -90,7 +90,7 @@ If there are any validation errors these are reported via the *ValidationErrors*
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/availablerates
+    https://api.gosweetspot.com/ratesqueryv1/availablerates
 
 *Headers*
 

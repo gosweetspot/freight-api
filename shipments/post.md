@@ -639,7 +639,7 @@ Note: When a *QuoteId* is not provided, the *Carrier* and *Service* properties a
 
 **Request**
 
-    POST http://api.gosweetspot.com/api/shipments
+    POST https://api.gosweetspot.com/api/shipments
 
 *Headers*
 

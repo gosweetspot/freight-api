@@ -37,7 +37,7 @@ HTTP 400.Bad request - when no consignment numbers supplied or when invalid cons
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/v2/publishmanifest
+    https://api.gosweetspot.com/v2/publishmanifest
 
 *Headers*
 

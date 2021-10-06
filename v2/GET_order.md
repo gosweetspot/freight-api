@@ -39,7 +39,7 @@ A JSON object with order status:
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/v2/order/SSORDER5840
+    https://api.gosweetspot.com/v2/order/SSORDER5840
     
 
 *Headers*

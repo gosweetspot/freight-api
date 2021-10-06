@@ -41,7 +41,7 @@ Http 409 - Max consignmnet limit 50 exceeded.
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/v2/deleteconnote
+    https://api.gosweetspot.com/v2/deleteconnote
 
 *Headers*
 

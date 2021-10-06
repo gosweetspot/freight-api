@@ -47,7 +47,7 @@ A string indicating whether or not the pickup request was lodged successfully. T
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/api/bookpickup
+    https://api.gosweetspot.com/api/bookpickup
 
 *Headers*
 

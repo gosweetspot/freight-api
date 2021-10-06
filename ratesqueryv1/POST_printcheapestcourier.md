@@ -94,7 +94,7 @@ If there are any validation errors these are reported via the *errors* property.
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/ratesqueryv1/printcheapestcourier
+    https://api.gosweetspot.com/ratesqueryv1/printcheapestcourier
 
 *Headers*
 

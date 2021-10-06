@@ -38,7 +38,7 @@ An array orders:
 ## Example
 **Request**
 
-    http://api.gosweetspot.com/v2/pendingorders
+    https://api.gosweetspot.com/v2/pendingorders
 
 *Headers*
 

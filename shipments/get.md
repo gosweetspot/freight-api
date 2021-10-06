@@ -395,7 +395,7 @@ Get status updates for shipments
 ## Example
 **Request**
 
-    GET http://api.gosweetspot.com/api/shipments?lastupdateminutc=2015-08-13%2008:15:13&page=1&shipments=ABC0001,ABC0002,ABC20303
+    GET https://api.gosweetspot.com/api/shipments?lastupdateminutc=2015-08-13%2008:15:13&page=1&shipments=ABC0001,ABC0002,ABC20303
 
 *Headers*
 
