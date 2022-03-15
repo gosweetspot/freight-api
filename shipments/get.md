@@ -324,6 +324,11 @@ Get status updates for shipments
 						<td>Total charge determined for this item at the time of consignment creation.</td>
                                             </tr>
                                             <tr>
+                                                <td>Charge_MarkedUpLineTotal</td>
+                                                <td>decimal</td>
+						<td>Total charge with mark up (if defined) determined for this item at the time of consignment creation.</td>
+                                            </tr>
+                                            <tr>
                                                 <td>PickedAt</td>
                                                 <td>Nullable DateTime</td>
 						<td>Date and time this item was picked up - will be null if not yet picked up.</td>
