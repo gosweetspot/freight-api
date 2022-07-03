@@ -4,7 +4,7 @@ Freight API provides programmatic access to GSS functionality and content.
 
 The API is [REST API](http:/en.wikipedia.org/wiki/Representational_State_Transfer "RESTful") and uses single token key authentication.
 Currently, return format for all endpoints is [JSON](http:/json.org/ "JSON").
-
+Please also refer to [Postman samples](https://documenter.getpostman.com/view/17190235/UV5XixUJ).
 
 ***
 

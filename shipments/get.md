@@ -105,6 +105,16 @@ Get status updates for shipments
                                     <td>total cost of the shipment excluding taxes where applicable</td>
                                 </tr>
                                 <tr>
+                                    <td>CreatedUtc</td>
+                                    <td>datetime</td>
+                                    <td>when the shipment has been created</td>
+                                </tr>
+                                <tr>
+                                    <td>CreatedBy</td>
+                                    <td>string</td>
+                                    <td>who created the shipment</td>
+                                </tr>
+                                <tr>
                                     <td>Tracking</td>
                                     <td>string</td>
                                     <td>track and trace url for live tracking of the order</td>
