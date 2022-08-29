@@ -362,10 +362,12 @@ Get status updates for shipments
                                                 <td>
                                                     event milestone code.<br />
                                                     <ul>
-                                                        <li>CR - Created</li>
-                                                        <li>PUP - Picked up from sender</li>
-                                                        <li>UPD - Courier status update provided</li>
-                                                        <li>EXP - delivery exception, or service update</li>
+                                                        <li>CR - Label created</li>
+							<li>INTL - International Transit</li>
+							<li>CUST - Customs Clearance Processing</li>
+                                                        <li>COUR - Collected from sender/in delivery(final mile) courier network</li>
+                                                        <li>COURU - Courier status update provided</li>
+                                                        <li>EXCP - delivery exception, or service update</li>
 							<li>DEL - Delivery completed</li>
                                                     </ul>
                                                 </td>
