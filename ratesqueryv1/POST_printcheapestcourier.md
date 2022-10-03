@@ -22,7 +22,6 @@ Upon creating the shipment, the print command can also be automatically initiate
 - **issaturdaydelivery** - true/false
 - **issignaturerequired** - true/false
 - **dutiesandtaxesbyreceiver** - true/false
-- **ruraloverride** - true/false
 - **deliveryreference** - string:60, order reference
 - **printtoprinter** - yes/no - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
 - **outputs** - optional -  JSON string array. Returns output of label as a PNG or PDF. Acceptable values:  

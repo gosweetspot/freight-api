@@ -42,7 +42,6 @@ When *QuoteId* is supplied, the *carrier* and *service* fields are ignored.  The
 - **issaturdaydelivery** - true/false - is saturday delivery required
 - **issignaturerequired** - true/false - is signature on delivery required
 - **dutiesandtaxesbyreceiver**  - true/false - where duties are due, is the receiver paying for these
-- **ruraloverride** - true/false - ignore all rural delivery validation and surcharges
 - **deliveryreference** - string:50, order reference
 - **commodities** - JSON object array of customs declared commoditiy information. Only required for international shipments.
 - **printtoprinter** - string, "true" would send a print request to your default printer. "false" indicates no printing is required. You can also put a [printer](https://github.com/gosweetspot/freight-api/blob/master/printers/get.md) name here and the print request would be sent directly to that printer.
@@ -187,7 +186,6 @@ This is a simple outbound, or sending out from your site, shipment.
     "IsSignatureRequired": true,
     "IsUrgentCouriers": false,
     "DutiesAndTaxesByReceiver": false,
-    "RuralOverride": false,
     "DeliveryReference": "ORDER123",
     "PrintToPrinter": "false",
     "Carrier": "Post Haste"
@@ -421,7 +419,6 @@ This is the same as a standard outbound, with the additional details of the DG. 
     "IsSignatureRequired": true,
     "IsUrgentCouriers": false,
     "DutiesAndTaxesByReceiver": false,
-    "RuralOverride": false,
     "DeliveryReference": "ORDER123",
     "PrintToPrinter": "false",
     "Outputs": [
@@ -567,7 +564,6 @@ Sending overseas. These shipment require addtional details for goods description
     "IsSignatureRequired": true,
     "IsUrgentCouriers": false,
     "DutiesAndTaxesByReceiver": false,
-    "RuralOverride": false,
     "DeliveryReference": "ORDER123",
     "PrintToPrinter": "false",
     "Outputs": null,
@@ -697,7 +693,6 @@ Note: When a *QuoteId* is not provided, the *Carrier* and *Service* properties a
     "IsSignatureRequired": true,
     "IsUrgentCouriers": false,
     "DutiesAndTaxesByReceiver": false,
-    "RuralOverride": false,
     "DeliveryReference": "ORDER123",
     "PrintToPrinter": "false",
     "Outputs": null,

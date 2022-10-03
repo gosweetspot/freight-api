@@ -26,7 +26,6 @@ You need to extend the AvailableRates post body to include other fields specifie
 - **issaturdaydelivery** - true/false - is saturday delivery required
 - **issignaturerequired** - true/false - is signature on delivery required
 - **dutiesandtaxesbyreceiver**  - true/false - where duties are due, is the receiver paying for these
-- **ruraloverride** - true/false - ignore all rural delivery validation and surcharges
 - **deliveryreference** - string:50, order reference
 - **commodities** - JSON object array of customs declared commoditiy information. Only required for international shipments.
 - **printtoprinter** - true/false - if supplied, the print job is sent to the *access_token* desingated printer. For testing purpose this can be provided as "no"
