@@ -99,6 +99,11 @@ When *QuoteId* is supplied, the *carrier* and *service* fields are ignored.  The
 - **hazchemcode** - string50
 - **isradioactive** - true/false, is goods radio active
 - **cargoaircraftonly** - true/false, Cargo Aircraft Only
+- **IsDGLQ** - true/false, is dangerous goods limited quantities
+- **TotalQuantity** - string200, required
+- **TotalKg** - decimal, required
+- **SignoffName** - string50
+- **SignoffRole** - string50
 - **lineitems** - JSON object array of items
 
 *dangerousgoods lineitems Object*
@@ -436,6 +441,11 @@ This is the same as a standard outbound, with the additional details of the DG. 
         "HazchemCode": "HC",
         "IsRadioActive": false,
         "CargoAircraftOnly": false,
+        "IsDGLQ":true,
+        "TotalKg":5.2,
+        "TotalQuantity":"2",
+        "SignOffName":"name",
+        "SignOffRole":"role",
         "LineItems": [
             {
                 "ConsignmentId": 0,
