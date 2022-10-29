@@ -20,7 +20,6 @@ Query to get available courier services and rates for the destination.
 - **issaturdaydelivery** - true/false
 - **issignaturerequired** - true/false
 - **dutiesandtaxesbyreceiver** - true/false
-- **ruraloverride** - true/false
 - **deliveryreference** - string:60, order reference
 
 *origin/destination Object*
