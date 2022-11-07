@@ -26,6 +26,7 @@ A JSON Object of available carriers.
 
 #### Carrier
 * AccountNumber - string
+* CarrierId - integer
 * CarrierName - string
 * CarrierType - string
 * Services - Array of strings
@@ -45,14 +46,16 @@ A JSON Object of available carriers.
 {
   "Carriers": [
     {
+      "CarrierId": 779,
       "CarrierName": "FedEx",
-      "CarrierType": "FedEx",
+      "CarrierType": "FedEx",      
       "Services": [
         "All"
       ],
       "AccountNumber": "1234"
     },
     {
+      "CarrierId": 432,
       "CarrierName": "Post Haste",
       "CarrierType": "PostHaste",
       "Services": [
@@ -64,6 +67,7 @@ A JSON Object of available carriers.
     }
     ,
     {
+      "CarrierId": 805,
       "CarrierName": "NZ Post",
       "CarrierType": "NZPost",
       "Services": [
@@ -76,6 +80,7 @@ A JSON Object of available carriers.
       "AccountNumber": "1234"
     },
     {
+      "CarrierId": 205,
       "CarrierName": "Mainstream AKL",
       "CarrierType": "Mainstream",
       "Services": [
@@ -86,6 +91,7 @@ A JSON Object of available carriers.
       "AccountNumber": "1234"
     },
     {
+      "CarrierId": 542,
       "CarrierName": "NZ Couriers",
       "CarrierType": "NZCouriers",
       "Services": [
