@@ -45,6 +45,8 @@ When *QuoteId* is supplied, the *carrier* and *service* fields are ignored.  The
 - **deliveryreference** - string:50, order reference
 - **commodities** - JSON object array of customs declared commoditiy information. Only required for international shipments.
 - **printtoprinter** - string, "true" would send a print request to your default printer. "false" indicates no printing is required. You can also put a [printer](https://github.com/gosweetspot/freight-api/blob/master/printers/get.md) name here and the print request would be sent directly to that printer.
+- **CustomField1Value** - string, value of "Custom field 1" in [Site Settings](https://ship.gosweetspot.com/sitesettings), only able to take the value when "Custom Field 1 Enabled" under "Internal References" is checked. Will response error when "Custom Field 1 Mandatory" is checked and the field is missing.
+- **CustomField2Value** - string, value of "Custom field 2" in [Site Settings](https://ship.gosweetspot.com/sitesettings), only able to take the value when "Custom Field 2 Enabled" under "Internal References" is checked. Will response error when "Custom Field 2 Mandatory" is checked and the field is missing.
 - **outputs** - optional -  JSON string array. Returns output of label as a PNG or PDF. Acceptable values:  
       LABEL_PDF - label is presented on an A4 page  
       LABEL_PNG_100X175 - label is presented as a PNG image with dimension 100mm x 175mm  
