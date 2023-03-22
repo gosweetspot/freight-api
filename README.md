@@ -1,3 +1,6 @@
+> **Warning**
+> This documentation is now obsolete. Please see our current documentation at https://api-docs.gosweetspot.com.
+
 # GSS Freight API
 
 Freight API provides programmatic access to GSS functionality and content.
