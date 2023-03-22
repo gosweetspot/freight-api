@@ -1,3 +1,5 @@
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # Shipments
 
     GET https://api.gosweetspot.com/api/shipments

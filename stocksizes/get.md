@@ -1,3 +1,5 @@
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # Stock Sizes
 
     GET https://api.gosweetspot.com/api/stocksizes

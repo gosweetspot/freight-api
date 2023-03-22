@@ -1,3 +1,5 @@
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # Submit New Customer Order Batched
 
     PUT api/customerorders

@@ -1,3 +1,5 @@
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # Print Available Rate
 
     POST ratesqueryv1/createandprint

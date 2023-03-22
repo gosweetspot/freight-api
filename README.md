@@ -1,3 +1,5 @@
+[![](obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # GSS Freight API
 
 Freight API provides programmatic access to GSS functionality and content.
