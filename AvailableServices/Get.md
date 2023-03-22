@@ -1,8 +1,4 @@
-[![](obsolete-banner.png)](https://api-docs.gosweetspot.com/)
-
-<div style="background-color: rgb(255, 243, 205); border: solid 1px rgb(255, 230, 156); border-radius: 0.375rem">
-  This documentation is now obsolete. Please see our current documentation at <a href="https://api-docs.gosweetspot.com/">https://api-docs.gosweetspot.com/</a>.
-</div>
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
 
 # Available Services
 
