@@ -1,3 +1,5 @@
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # Pickup Booking
 
     POST api/bookpickup

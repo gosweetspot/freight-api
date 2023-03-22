@@ -1,3 +1,5 @@
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # Create Shipments
 
     POST api/shipments

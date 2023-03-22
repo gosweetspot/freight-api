@@ -1,3 +1,5 @@
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # Submit New Order Batched
 
     POST v2/neworders

@@ -1,3 +1,5 @@
+[![](../obsolete-banner.png)](https://api-docs.gosweetspot.com/)
+
 # Webhooks
 
     To configure you need to use https://ship.gosweetspot.com/developer/webhooks
